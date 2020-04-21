@@ -5,6 +5,25 @@
              x:DataType="mainPage:MainPageViewModel"
              x:Class="StarkovInteractiveCV.VisualElements.Pages.MainPage.MainPage">
     <Grid>
-        <Button Text="Change theme" Command="{Binding ChangeThemeCommand}"/>
+        <ScrollView x:Name="Scroll" VerticalScrollBarVisibility="Never">
+            <StackLayout x:Name="ScrollableStack">
+                <BoxView Color="Aqua" HeightRequest="200"/>
+                <BoxView Color="Black" HeightRequest="200"/>
+                <BoxView Color="DarkRed" HeightRequest="200"/>
+                <BoxView Color="Brown" HeightRequest="200"/>
+                <BoxView Color="Aqua" HeightRequest="200"/>
+                <BoxView Color="MistyRose" HeightRequest="200"/>
+                <BoxView Color="Aqua" HeightRequest="200"/>
+                <BoxView Color="Green" HeightRequest="200"/>
+                <BoxView Color="Aqua" HeightRequest="200"/>
+                <BoxView Color="Yellow" HeightRequest="200"/>
+                <BoxView Color="Aqua" HeightRequest="200"/>
+                <BoxView Color="Azure" HeightRequest="200"/>
+                <BoxView Color="Aqua" HeightRequest="200"/>
+            </StackLayout>
+        </ScrollView>
+        <Grid x:Name="HeaderGrid" VerticalOptions="Start" BackgroundColor="Purple">
+
+        </Grid>
     </Grid>
 </ContentPage>
