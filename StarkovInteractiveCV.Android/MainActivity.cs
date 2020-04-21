@@ -1,17 +1,12 @@
-﻿using System;
-
-using Android.App;
-using Android.Content.PM;
-using Android.Runtime;
-using Android.Views;
-using Android.Widget;
-using Android.OS;
-using StarkovInteractiveCV.Enums;
-using Plugin.CurrentActivity;
-using Prism.Ioc;
-using StarkovInteractiveCV.Interfaces;
+﻿using Android.App;
 using Android.Content;
+using Android.Content.PM;
+using Android.OS;
 using Android.Preferences;
+using Android.Runtime;
+using FFImageLoading.Forms.Platform;
+using FFImageLoading.Svg.Forms;
+using StarkovInteractiveCV.Enums;
 
 namespace StarkovInteractiveCV.Droid
 {
@@ -35,7 +30,8 @@ namespace StarkovInteractiveCV.Droid
             ToolbarResource = Resource.Layout.Toolbar;
             
             base.OnCreate(savedInstanceState);
-            CrossCurrentActivity.Current.Init(this, savedInstanceState);
+            SvgCachedImage.Init();
+            CachedImageRenderer.Init(false);
 
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);

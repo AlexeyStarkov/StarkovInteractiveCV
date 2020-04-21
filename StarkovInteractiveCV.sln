@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StarkovInteractiveCV.Android", "StarkovInteractiveCV.Android\StarkovInteractiveCV.Android.csproj", "{C9E4E2AB-DCA2-4D91-B81C-A85EA0CF8041}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StarkovInteractiveCV.iOS", "StarkovInteractiveCV.iOS\StarkovInteractiveCV.iOS.csproj", "{3332B086-F2D9-46B1-92AF-57CED4F86D40}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StarkovInteractiveCV", "StarkovInteractiveCV\StarkovInteractiveCV.csproj", "{A4A8BE4E-B92B-49C6-8FD6-15F54B496552}"
 EndProject
 Global
@@ -29,18 +27,6 @@ Global
 		{C9E4E2AB-DCA2-4D91-B81C-A85EA0CF8041}.Debug|iPhone.Build.0 = Debug|Any CPU
 		{C9E4E2AB-DCA2-4D91-B81C-A85EA0CF8041}.Release|iPhone.ActiveCfg = Release|Any CPU
 		{C9E4E2AB-DCA2-4D91-B81C-A85EA0CF8041}.Release|iPhone.Build.0 = Release|Any CPU
-		{3332B086-F2D9-46B1-92AF-57CED4F86D40}.Debug|Any CPU.ActiveCfg = Debug|iPhoneSimulator
-		{3332B086-F2D9-46B1-92AF-57CED4F86D40}.Debug|Any CPU.Build.0 = Debug|iPhoneSimulator
-		{3332B086-F2D9-46B1-92AF-57CED4F86D40}.Release|Any CPU.ActiveCfg = Release|iPhoneSimulator
-		{3332B086-F2D9-46B1-92AF-57CED4F86D40}.Release|Any CPU.Build.0 = Release|iPhoneSimulator
-		{3332B086-F2D9-46B1-92AF-57CED4F86D40}.Debug|iPhoneSimulator.ActiveCfg = Debug|iPhoneSimulator
-		{3332B086-F2D9-46B1-92AF-57CED4F86D40}.Debug|iPhoneSimulator.Build.0 = Debug|iPhoneSimulator
-		{3332B086-F2D9-46B1-92AF-57CED4F86D40}.Release|iPhoneSimulator.ActiveCfg = Release|iPhoneSimulator
-		{3332B086-F2D9-46B1-92AF-57CED4F86D40}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
-		{3332B086-F2D9-46B1-92AF-57CED4F86D40}.Debug|iPhone.ActiveCfg = Debug|iPhone
-		{3332B086-F2D9-46B1-92AF-57CED4F86D40}.Debug|iPhone.Build.0 = Debug|iPhone
-		{3332B086-F2D9-46B1-92AF-57CED4F86D40}.Release|iPhone.ActiveCfg = Release|iPhone
-		{3332B086-F2D9-46B1-92AF-57CED4F86D40}.Release|iPhone.Build.0 = Release|iPhone
 		{A4A8BE4E-B92B-49C6-8FD6-15F54B496552}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{A4A8BE4E-B92B-49C6-8FD6-15F54B496552}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A4A8BE4E-B92B-49C6-8FD6-15F54B496552}.Release|Any CPU.ActiveCfg = Release|Any CPU

@@ -23,6 +23,11 @@ namespace StarkovInteractiveCV.VisualElements.Pages.MainPage
             }
         });
 
+        public ICommand OpenProfileCommand => new Command(async (parameter) =>
+        {
+
+        });
+
         public MainPageViewModel(INavigationService navigationService, IThemeService themeService)
             : base(navigationService)
         {
