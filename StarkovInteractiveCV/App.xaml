@@ -6,5 +6,6 @@
                         xmlns:prism="clr-namespace:Prism.Unity;assembly=Prism.Unity.Forms"
                         mc:Ignorable="d" x:Class="StarkovInteractiveCV.App">
     <Application.Resources>
+        <ResourceDictionary Source="Styles/LightTheme.xaml" />
     </Application.Resources>
 </prism:PrismApplication>

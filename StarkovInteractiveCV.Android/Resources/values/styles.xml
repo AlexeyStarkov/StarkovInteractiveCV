@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <style name="MainTheme" parent="MainTheme.Base">
+    <style name="MainLightTheme" parent="MainTheme.Base">
+        <item name="android:navigationBarColor">#FF4081</item>
+    </style>
+    <style name="MainDarkTheme" parent="MainTheme.Base">
+        <item name="android:navigationBarColor">#1976D2</item>
     </style>
     <!-- Base theme applied no matter what API -->
     <style name="MainTheme.Base" parent="Theme.AppCompat.Light.DarkActionBar">

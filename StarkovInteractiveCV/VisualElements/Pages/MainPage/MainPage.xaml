@@ -5,6 +5,6 @@
              x:DataType="mainPage:MainPageViewModel"
              x:Class="StarkovInteractiveCV.VisualElements.Pages.MainPage.MainPage">
     <Grid>
-        <Label Text="Hello World" VerticalOptions="Center" HorizontalOptions="Center"/>
+        <Button Text="Change theme" Command="{Binding ChangeThemeCommand}"/>
     </Grid>
 </ContentPage>

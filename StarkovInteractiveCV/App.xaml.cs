@@ -1,6 +1,8 @@
 ﻿using Prism;
 using Prism.Ioc;
 using Prism.Unity;
+using StarkovInteractiveCV.Interfaces;
+using StarkovInteractiveCV.Services;
 using StarkovInteractiveCV.VisualElements.Pages.MainPage;
 
 namespace StarkovInteractiveCV
@@ -20,7 +22,15 @@ namespace StarkovInteractiveCV
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
-            containerRegistry.RegisterForNavigation<MainPage, MainPageViewModel>();   
+            containerRegistry.RegisterForNavigation<MainPage, MainPageViewModel>();
+
+            containerRegistry.RegisterSingleton<ISettingsService, SettingsService>();
+            containerRegistry.RegisterSingleton<IThemeService, ThemeService>();
+        }
+
+        protected override void OnStart()
+        {
+            base.OnStart();
         }
     }
 }
