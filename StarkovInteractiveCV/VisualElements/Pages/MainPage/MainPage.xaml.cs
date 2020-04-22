@@ -1,12 +1,17 @@
-﻿using StarkovInteractiveCV.Helpers;
+﻿using System;
+using StarkovInteractiveCV.Helpers;
 using Xamarin.Forms;
 
 namespace StarkovInteractiveCV.VisualElements.Pages.MainPage
 {
     public partial class MainPage : ContentPage
     {
-        private const double HeaderGridMinHeight = 80;
-        private const double HeaderGridHeightFactor = 0.6;
+        private const double HeaderGridMinHeight = 50;
+        private const double HeaderGridHeightFactor = 0.65;
+        private const double PhotoMaxSize = 200;
+        private const double MiniPhotoTranslationX = 10;
+
+        private readonly Point[] _satellitesTranslations;
 
         private double _headerGridHeightDefault;
 
@@ -14,43 +19,46 @@ namespace StarkovInteractiveCV.VisualElements.Pages.MainPage
         {
             InitializeComponent();
 
-            var satellitesTranslations = Tools.GetStarTopsCoordinates(9, new Point(0, 0), 150);
+            Photo.WidthRequest = PhotoMaxSize;
+            Photo.HeightRequest = PhotoMaxSize;
 
-            HobbiesButtonFrame.TranslationX = satellitesTranslations[0].X;
-            HobbiesButtonFrame.TranslationY = satellitesTranslations[0].Y;
+            _satellitesTranslations = Tools.GetStarTopsCoordinates(9, new Point(0, 0), 140, 2);
 
-            WorkflowButtonFrame.TranslationX = satellitesTranslations[1].X;
-            WorkflowButtonFrame.TranslationY = satellitesTranslations[1].Y;
+            HobbiesButtonFrame.TranslationX = _satellitesTranslations[0].X;
+            HobbiesButtonFrame.TranslationY = _satellitesTranslations[0].Y;
 
-            DevSkilsButtonFrame.TranslationX = satellitesTranslations[2].X;
-            DevSkilsButtonFrame.TranslationY = satellitesTranslations[2].Y;
+            WorkflowButtonFrame.TranslationX = _satellitesTranslations[1].X;
+            WorkflowButtonFrame.TranslationY = _satellitesTranslations[1].Y;
 
-            ToolsButtonFrame.TranslationX = satellitesTranslations[3].X;
-            ToolsButtonFrame.TranslationY = satellitesTranslations[3].Y;
+            DevSkilsButtonFrame.TranslationX = _satellitesTranslations[2].X;
+            DevSkilsButtonFrame.TranslationY = _satellitesTranslations[2].Y;
 
-            ProfileButtonFrame.TranslationX = satellitesTranslations[4].X;
-            ProfileButtonFrame.TranslationY = satellitesTranslations[4].Y;
+            ToolsButtonFrame.TranslationX = _satellitesTranslations[3].X;
+            ToolsButtonFrame.TranslationY = _satellitesTranslations[3].Y;
 
-            ContactButtonFrame.TranslationX = satellitesTranslations[5].X;
-            ContactButtonFrame.TranslationY = satellitesTranslations[5].Y;
+            ProfileButtonFrame.TranslationX = _satellitesTranslations[4].X;
+            ProfileButtonFrame.TranslationY = _satellitesTranslations[4].Y;
 
-            SocialButtonFrame.TranslationX = satellitesTranslations[6].X;
-            SocialButtonFrame.TranslationY = satellitesTranslations[6].Y;
+            ContactButtonFrame.TranslationX = _satellitesTranslations[5].X;
+            ContactButtonFrame.TranslationY = _satellitesTranslations[5].Y;
 
-            LanguagesButtonFrame.TranslationX = satellitesTranslations[7].X;
-            LanguagesButtonFrame.TranslationY = satellitesTranslations[7].Y;
+            SocialButtonFrame.TranslationX = _satellitesTranslations[6].X;
+            SocialButtonFrame.TranslationY = _satellitesTranslations[6].Y;
 
-            PersonalityButtonFrame.TranslationX = satellitesTranslations[8].X;
-            PersonalityButtonFrame.TranslationY = satellitesTranslations[8].Y;
+            LanguagesButtonFrame.TranslationX = _satellitesTranslations[7].X;
+            LanguagesButtonFrame.TranslationY = _satellitesTranslations[7].Y;
+
+            PersonalityButtonFrame.TranslationX = _satellitesTranslations[8].X;
+            PersonalityButtonFrame.TranslationY = _satellitesTranslations[8].Y;
         }
 
         protected override void OnParentSet()
         {
             SizeChanged += (s, e) =>
             {
-                if (Height > 0)
+                if (Height > 0 && Width > 0)
                 {
-                    HeaderGrid.HeightRequest = _headerGridHeightDefault = this.Height * HeaderGridHeightFactor;
+                    HeaderFrame.HeightRequest = _headerGridHeightDefault = this.Height * HeaderGridHeightFactor;
                     ScrollableStack.Padding = new Thickness(0, _headerGridHeightDefault, 0, 0);
                 }
             };
@@ -63,11 +71,60 @@ namespace StarkovInteractiveCV.VisualElements.Pages.MainPage
         private void OnScrollScrolled(object sender, ScrolledEventArgs e)
         {
             if (_headerGridHeightDefault - e.ScrollY < HeaderGridMinHeight)
-                HeaderGrid.HeightRequest = HeaderGridMinHeight;
+                HeaderFrame.HeightRequest = HeaderGridMinHeight;
             else if(_headerGridHeightDefault - e.ScrollY >= _headerGridHeightDefault)
-                HeaderGrid.HeightRequest = _headerGridHeightDefault;
+                HeaderFrame.HeightRequest = _headerGridHeightDefault;
             else
-                HeaderGrid.HeightRequest = _headerGridHeightDefault - e.ScrollY;
+                HeaderFrame.HeightRequest = _headerGridHeightDefault - e.ScrollY;
+
+            var headerMovementProgressFactor = Math.Pow((HeaderFrame.HeightRequest - HeaderGridMinHeight) / (_headerGridHeightDefault - HeaderGridMinHeight), 4);
+
+            HobbiesButtonFrame.TranslationX = _satellitesTranslations[0].X * headerMovementProgressFactor;
+            HobbiesButtonFrame.TranslationY = _satellitesTranslations[0].Y * headerMovementProgressFactor;
+            WorkflowButtonFrame.TranslationX = _satellitesTranslations[1].X * headerMovementProgressFactor;
+            WorkflowButtonFrame.TranslationY = _satellitesTranslations[1].Y * headerMovementProgressFactor;
+            DevSkilsButtonFrame.TranslationX = _satellitesTranslations[2].X * headerMovementProgressFactor;
+            DevSkilsButtonFrame.TranslationY = _satellitesTranslations[2].Y * headerMovementProgressFactor;
+            ToolsButtonFrame.TranslationX = _satellitesTranslations[3].X * headerMovementProgressFactor;
+            ToolsButtonFrame.TranslationY = _satellitesTranslations[3].Y * headerMovementProgressFactor;
+            ProfileButtonFrame.TranslationX = _satellitesTranslations[4].X * headerMovementProgressFactor;
+            ProfileButtonFrame.TranslationY = _satellitesTranslations[4].Y * headerMovementProgressFactor;
+            ContactButtonFrame.TranslationX = _satellitesTranslations[5].X * headerMovementProgressFactor;
+            ContactButtonFrame.TranslationY = _satellitesTranslations[5].Y * headerMovementProgressFactor;
+            SocialButtonFrame.TranslationX = _satellitesTranslations[6].X * headerMovementProgressFactor;
+            SocialButtonFrame.TranslationY = _satellitesTranslations[6].Y * headerMovementProgressFactor;
+            LanguagesButtonFrame.TranslationX = _satellitesTranslations[7].X * headerMovementProgressFactor;
+            LanguagesButtonFrame.TranslationY = _satellitesTranslations[7].Y * headerMovementProgressFactor;
+            PersonalityButtonFrame.TranslationX = _satellitesTranslations[8].X * headerMovementProgressFactor;
+            PersonalityButtonFrame.TranslationY = _satellitesTranslations[8].Y * headerMovementProgressFactor;
+
+            var satellitesOpacity = Math.Pow((HeaderFrame.HeightRequest - HeaderGridMinHeight) / (_headerGridHeightDefault - HeaderGridMinHeight), 7) * 1.2;
+
+            HobbiesButtonFrame.Opacity = satellitesOpacity;
+            WorkflowButtonFrame.Opacity = satellitesOpacity;
+            DevSkilsButtonFrame.Opacity = satellitesOpacity;
+            ToolsButtonFrame.Opacity = satellitesOpacity;
+            ProfileButtonFrame.Opacity = satellitesOpacity;
+            ContactButtonFrame.Opacity = satellitesOpacity;
+            SocialButtonFrame.Opacity = satellitesOpacity;
+            LanguagesButtonFrame.Opacity = satellitesOpacity;
+            PersonalityButtonFrame.Opacity = satellitesOpacity;
+
+            var photoMovementScaleFactor = Math.Pow((HeaderFrame.HeightRequest - HeaderGridMinHeight) / (_headerGridHeightDefault - HeaderGridMinHeight), 1.5) * 1.4 + 0.2;
+
+            var photoNewSize = PhotoMaxSize * photoMovementScaleFactor;
+            if (photoNewSize > PhotoMaxSize)
+                photoNewSize = PhotoMaxSize;
+
+            Photo.HeightRequest = photoNewSize;
+            Photo.WidthRequest = photoNewSize;
+
+            var photoMovementFactor = 1 - (HeaderFrame.HeightRequest - HeaderGridMinHeight) / (_headerGridHeightDefault - HeaderGridMinHeight) * 1.4;
+            if (photoMovementFactor < 0)
+                photoMovementFactor = 0;
+
+            var _miniPhotoTranslationX = (Width / 2 + photoNewSize / 2) - photoNewSize - MiniPhotoTranslationX;
+            Photo.TranslationX = _miniPhotoTranslationX * photoMovementFactor;
         }
     }
 }

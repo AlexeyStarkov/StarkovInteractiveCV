@@ -3,6 +3,24 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
                     x:Class="StarkovInteractiveCV.Styles.LightTheme">
 
+    <Color x:Key="PrimaryBackgroundColor">#FFFFFF</Color>
+    <Color x:Key="SecondaryBacgroundColor">#E6E6E6</Color>
+    <Color x:Key="AccentColor">#33A6CC</Color>
+
+    <!--SVGs-->
+    <x:String x:Key="ContactIcon">resource://ContactLight.svg</x:String>
+    <x:String x:Key="HobbiesIcon">resource://HobbiesLight.svg</x:String>
+    <x:String x:Key="LanguagesIcon">resource://LanguagesLight.svg</x:String>
+    <x:String x:Key="ProfileIcon">resource://ProfileLight.svg</x:String>
+    <x:String x:Key="SkillsIcon">resource://SkillsLight.svg</x:String>
+    <x:String x:Key="SocialIcon">resource://SocialLight.svg</x:String>
+    <x:String x:Key="StrengthIcon">resource://StrengthLight.svg</x:String>
+    <x:String x:Key="ToolsIcon">resource://ToolsLight.svg</x:String>
+    <x:String x:Key="WorkflowIcon">resource://WorkflowLight.svg</x:String>
+
+    <!--PNG-->
+    <x:String x:Key="CirclePhoto">resource://CirclePhoto.png</x:String>
+
     <!--Correction styles-->
     <Style TargetType="Frame">
         <Setter Property="Padding" Value="0"/>

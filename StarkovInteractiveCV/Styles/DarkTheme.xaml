@@ -3,6 +3,23 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
                     x:Class="StarkovInteractiveCV.Styles.DarkTheme">
 
+    <Color x:Key="PrimaryBackgroundColor">#454544</Color>
+    <Color x:Key="SecondaryBacgroundColor">#4F4E4F</Color>
+    <Color x:Key="AccentColor">#33A6CC</Color>
+
+    <!--SVGs-->
+    <x:String x:Key="ContactIcon">resource://ContactDark.svg</x:String>
+    <x:String x:Key="HobbiesIcon">resource://HobbiesDark.svg</x:String>
+    <x:String x:Key="LanguagesIcon">resource://LanguagesDark.svg</x:String>
+    <x:String x:Key="ProfileIcon">resource://ProfileDark.svg</x:String>
+    <x:String x:Key="SkillsIcon">resource://SkillsDark.svg</x:String>
+    <x:String x:Key="SocialIcon">resource://SocialDark.svg</x:String>
+    <x:String x:Key="StrengthIcon">resource://StrengthDark.svg</x:String>
+    <x:String x:Key="ToolsIcon">resource://ToolsDark.svg</x:String>
+    <x:String x:Key="WorkflowIcon">resource://WorkflowDark.svg</x:String>
+
+    <!--PNG-->
+    <x:String x:Key="CirclePhoto">resource://CirclePhoto.png</x:String>
 
     <!--Correction styles-->
     <Style TargetType="Frame">

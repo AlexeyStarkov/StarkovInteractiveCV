@@ -37,8 +37,90 @@
     <Folder Include="Resources\SVG\" />
     <Folder Include="Resources\PNG\" />
     <Folder Include="Helpers\" />
+    <Folder Include="Resources\SVG\LightTheme\" />
+    <Folder Include="Resources\SVG\DarkTheme\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Remove="Styles\LightTheme %28copy%29.xaml.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="Resources\SVG\DarkTheme\ContactDark.svg" />
+    <None Remove="Resources\SVG\DarkTheme\HobbiesDark.svg" />
+    <None Remove="Resources\SVG\DarkTheme\LanguagesDark.svg" />
+    <None Remove="Resources\SVG\DarkTheme\ProfileDark.svg" />
+    <None Remove="Resources\SVG\DarkTheme\SkillsDark.svg" />
+    <None Remove="Resources\SVG\DarkTheme\SocialDark.svg" />
+    <None Remove="Resources\SVG\DarkTheme\StrengthDark.svg" />
+    <None Remove="Resources\SVG\DarkTheme\ToolsDark.svg" />
+    <None Remove="Resources\SVG\DarkTheme\WorkflowDark.svg" />
+    <None Remove="Resources\SVG\LightTheme\ContactLight.svg" />
+    <None Remove="Resources\SVG\LightTheme\HobbiesLight.svg" />
+    <None Remove="Resources\SVG\LightTheme\LanguagesLight.svg" />
+    <None Remove="Resources\SVG\LightTheme\ProfileLight.svg" />
+    <None Remove="Resources\SVG\LightTheme\SkillsLight.svg" />
+    <None Remove="Resources\SVG\LightTheme\SocialLight.svg" />
+    <None Remove="Resources\SVG\LightTheme\StrengthLight.svg" />
+    <None Remove="Resources\SVG\LightTheme\ToolsLight.svg" />
+    <None Remove="Resources\SVG\LightTheme\WorkflowLight.svg" />
+    <None Remove="Resources\PNG\CirclePhoto.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\SVG\DarkTheme\ContactDark.svg">
+      <LogicalName>ContactDark.svg</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\SVG\DarkTheme\HobbiesDark.svg">
+      <LogicalName>HobbiesDark.svg</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\SVG\DarkTheme\LanguagesDark.svg">
+      <LogicalName>LanguagesDark.svg</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\SVG\DarkTheme\ProfileDark.svg">
+      <LogicalName>ProfileDark.svg</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\SVG\DarkTheme\SkillsDark.svg">
+      <LogicalName>SkillsDark.svg</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\SVG\DarkTheme\SocialDark.svg">
+      <LogicalName>SocialDark.svg</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\SVG\DarkTheme\StrengthDark.svg">
+      <LogicalName>StrengthDark.svg</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\SVG\DarkTheme\ToolsDark.svg">
+      <LogicalName>ToolsDark.svg</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\SVG\DarkTheme\WorkflowDark.svg">
+      <LogicalName>WorkflowDark.svg</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\SVG\LightTheme\ContactLight.svg">
+      <LogicalName>ContactLight.svg</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\SVG\LightTheme\HobbiesLight.svg">
+      <LogicalName>HobbiesLight.svg</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\SVG\LightTheme\LanguagesLight.svg">
+      <LogicalName>LanguagesLight.svg</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\SVG\LightTheme\ProfileLight.svg">
+      <LogicalName>ProfileLight.svg</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\SVG\LightTheme\SkillsLight.svg">
+      <LogicalName>SkillsLight.svg</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\SVG\LightTheme\SocialLight.svg">
+      <LogicalName>SocialLight.svg</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\SVG\LightTheme\StrengthLight.svg">
+      <LogicalName>StrengthLight.svg</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\SVG\LightTheme\ToolsLight.svg">
+      <LogicalName>ToolsLight.svg</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\SVG\LightTheme\WorkflowLight.svg">
+      <LogicalName>WorkflowLight.svg</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\PNG\CirclePhoto.png">
+      <LogicalName>CirclePhoto.png</LogicalName>
+    </EmbeddedResource>
   </ItemGroup>
 </Project>
