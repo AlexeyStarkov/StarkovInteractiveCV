@@ -4,6 +4,7 @@ using Prism.Unity;
 using StarkovInteractiveCV.Interfaces;
 using StarkovInteractiveCV.Services;
 using StarkovInteractiveCV.VisualElements.Pages.MainPage;
+using Xamarin.Forms;
 
 namespace StarkovInteractiveCV
 {
@@ -16,6 +17,12 @@ namespace StarkovInteractiveCV
         protected override async void OnInitialized()
         {
             InitializeComponent();
+
+            if (Device.RuntimePlatform == Device.Android)
+            {
+                var themeService = Container.Resolve<IThemeService>();
+                themeService.SetThemeResources(themeService.CurrentTheme);
+            }
 
             await NavigationService.NavigateAsync(nameof(MainPage));
         }
@@ -31,6 +38,11 @@ namespace StarkovInteractiveCV
         protected override void OnStart()
         {
             base.OnStart();
+        }
+
+        protected override void OnResume()
+        {
+            base.OnResume();
         }
     }
 }

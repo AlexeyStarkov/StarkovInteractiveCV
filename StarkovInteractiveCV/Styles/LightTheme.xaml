@@ -7,6 +7,12 @@
     <Color x:Key="SecondaryBacgroundColor">#E6E6E6</Color>
     <Color x:Key="AccentColor">#33A6CC</Color>
 
+    <Color x:Key="PrimaryTextColor">#000000</Color>
+    
+    <!--Fonts-->
+    <OnPlatform x:Key="PrimaryFont" x:TypeArguments="x:String" iOS="ClarikaGeometric-Bold" Android="Fonts/ClarikaGeometricBold.otf#ClarikaGeometricBold"/>
+    <OnPlatform x:Key="SecondaryFont" x:TypeArguments="x:String" iOS="ClarikaGeometric-Regular" Android="Fonts/ClarikaGeometricRegular.otf#ClarikaGeometricRegular"/>
+
     <!--SVGs-->
     <x:String x:Key="ContactIcon">resource://ContactLight.svg</x:String>
     <x:String x:Key="HobbiesIcon">resource://HobbiesLight.svg</x:String>
@@ -17,6 +23,8 @@
     <x:String x:Key="StrengthIcon">resource://StrengthLight.svg</x:String>
     <x:String x:Key="ToolsIcon">resource://ToolsLight.svg</x:String>
     <x:String x:Key="WorkflowIcon">resource://WorkflowLight.svg</x:String>
+    <x:String x:Key="HamburgerMenuIcon">resource://HamburgerMenuLight.svg</x:String>
+    <x:String x:Key="ThemeSwitchIcon">resource://ThemeSwitchLight.svg</x:String>
 
     <!--PNG-->
     <x:String x:Key="CirclePhoto">resource://CirclePhoto.png</x:String>

@@ -20,13 +20,30 @@ namespace StarkovInteractiveCV.Services
 
         public void SetTheme(StyleTheme theme)
         {
+            SetThemeResources(theme);
+            _settingsService.StyleTheme = theme;
+            _nativeThemeService.SetTheme(theme);
+        }
+
+        public void SetThemeResources(StyleTheme theme)
+        {
             if (theme == StyleTheme.Light)
                 App.Current.Resources = new LightTheme();
             else
                 App.Current.Resources = new DarkTheme();
+        }
 
-            _settingsService.StyleTheme = theme;
-            _nativeThemeService.SetTheme(theme);
+        public void SwitchTheme()
+        {
+            switch (CurrentTheme)
+            {
+                case StyleTheme.Dark:
+                    SetTheme(StyleTheme.Light);
+                    break;
+                case StyleTheme.Light:
+                    SetTheme(StyleTheme.Dark);
+                    break;
+            }
         }
     }
 }

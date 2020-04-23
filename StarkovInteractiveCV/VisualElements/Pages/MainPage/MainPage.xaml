@@ -21,6 +21,7 @@
                 <Setter Property="VerticalOptions" Value="Center"/>
                 <Setter Property="HorizontalOptions" Value="Center"/>
                 <Setter Property="BackgroundColor" Value="{DynamicResource AccentColor}"/>
+                <Setter Property="HasShadow" Value="True"/>
             </Style>
             <Style TargetType="ffimagesvg:SvgCachedImage" x:Key="SatelliteIconSvgStyle">
                 <Setter Property="HeightRequest" Value="20"/>
@@ -109,7 +110,17 @@
                     </Frame.GestureRecognizers>
                     <ffimagesvg:SvgCachedImage Source="{DynamicResource ProfileIcon}" Style="{StaticResource SatelliteIconSvgStyle}"/>
                 </Frame>
-            
+
+                <Grid x:Name="NameGrid" VerticalOptions="Start">
+                    <Frame Style="{StaticResource SatelliteIconFrameStyle}" BackgroundColor="{DynamicResource PrimaryBackgroundColor}" HorizontalOptions="End" HeightRequest="40" WidthRequest="40" CornerRadius="20" Margin="0,0,10,0">
+                        <Frame.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding SwitchThemeCommand}"/>
+                        </Frame.GestureRecognizers>
+                        <ffimagesvg:SvgCachedImage Source="{DynamicResource ThemeSwitchIcon}" Style="{StaticResource SatelliteIconSvgStyle}" HeightRequest="25"/>
+                    </Frame>
+                    <Label x:Name="NameLabel" Text="ALEKSEI STARKOV" Opacity="0" TextColor="{DynamicResource PrimaryTextColor}" FontFamily="{DynamicResource PrimaryFont}" FontSize="20" HorizontalOptions="Center" VerticalOptions="Center"/>
+                </Grid>
+
                 <ffimage:CachedImage x:Name="Photo" Source="{DynamicResource CirclePhoto}" VerticalOptions="Center" HorizontalOptions="Center" Aspect="AspectFit"/>
             </Grid>
         </Frame>

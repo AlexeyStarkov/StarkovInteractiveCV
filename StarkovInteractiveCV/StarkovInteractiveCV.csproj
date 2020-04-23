@@ -63,6 +63,10 @@
     <None Remove="Resources\SVG\LightTheme\ToolsLight.svg" />
     <None Remove="Resources\SVG\LightTheme\WorkflowLight.svg" />
     <None Remove="Resources\PNG\CirclePhoto.png" />
+    <None Remove="Resources\SVG\DarkTheme\HamburgerMenuDark.svg" />
+    <None Remove="Resources\SVG\LightTheme\HamburgerMenuLight.svg" />
+    <None Remove="Resources\SVG\DarkTheme\ThemeSwitchDark.svg" />
+    <None Remove="Resources\SVG\LightTheme\ThemeSwitchLight.svg" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Resources\SVG\DarkTheme\ContactDark.svg">
@@ -121,6 +125,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Resources\PNG\CirclePhoto.png">
       <LogicalName>CirclePhoto.png</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\SVG\DarkTheme\HamburgerMenuDark.svg">
+      <LogicalName>HamburgerMenuDark.svg</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\SVG\LightTheme\HamburgerMenuLight.svg">
+      <LogicalName>HamburgerMenuLight.svg</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\SVG\DarkTheme\ThemeSwitchDark.svg">
+      <LogicalName>ThemeSwitchDark.svg</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\SVG\LightTheme\ThemeSwitchLight.svg">
+      <LogicalName>ThemeSwitchLight.svg</LogicalName>
     </EmbeddedResource>
   </ItemGroup>
 </Project>

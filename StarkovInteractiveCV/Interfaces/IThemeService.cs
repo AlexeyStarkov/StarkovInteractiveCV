@@ -6,5 +6,7 @@ namespace StarkovInteractiveCV.Interfaces
     {
         StyleTheme CurrentTheme { get; }
         void SetTheme(StyleTheme theme);
+        void SetThemeResources(StyleTheme theme);
+        void SwitchTheme();
     }
 }

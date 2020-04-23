@@ -21,6 +21,7 @@ namespace StarkovInteractiveCV.VisualElements.Pages.MainPage
 
             Photo.WidthRequest = PhotoMaxSize;
             Photo.HeightRequest = PhotoMaxSize;
+            NameGrid.HeightRequest = HeaderGridMinHeight;
 
             _satellitesTranslations = Tools.GetStarTopsCoordinates(9, new Point(0, 0), 140, 2);
 
@@ -123,8 +124,11 @@ namespace StarkovInteractiveCV.VisualElements.Pages.MainPage
             if (photoMovementFactor < 0)
                 photoMovementFactor = 0;
 
-            var _miniPhotoTranslationX = (Width / 2 + photoNewSize / 2) - photoNewSize - MiniPhotoTranslationX;
+            var _miniPhotoTranslationX = -(Width / 2 - photoNewSize / 2) + MiniPhotoTranslationX;
             Photo.TranslationX = _miniPhotoTranslationX * photoMovementFactor;
+
+            var nameGridOpacityFactor = 1 - Math.Pow((HeaderFrame.HeightRequest - HeaderGridMinHeight) / (_headerGridHeightDefault - HeaderGridMinHeight), 2) * 1.5;
+            NameLabel.Opacity = nameGridOpacityFactor;
         }
     }
 }

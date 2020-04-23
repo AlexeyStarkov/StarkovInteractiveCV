@@ -88,12 +88,17 @@
   <ItemGroup>
     <Folder Include="Resources\drawable\" />
     <Folder Include="Serivces\" />
+    <Folder Include="Assets\Fonts\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\StarkovInteractiveCV\StarkovInteractiveCV.csproj">
       <Project>{A4A8BE4E-B92B-49C6-8FD6-15F54B496552}</Project>
       <Name>StarkovInteractiveCV</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Fonts\ClarikaGeometricBold.otf" />
+    <AndroidAsset Include="Assets\Fonts\ClarikaGeometricRegular.otf" />
   </ItemGroup>
  <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>
