@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Windows.Input;
 using Prism.Navigation;
 using StarkovInteractiveCV.Interfaces;
@@ -43,7 +45,24 @@ namespace StarkovInteractiveCV.VisualElements.Pages.MainPage
         {
             return new List<WorkExpirienceModel>()
             {
-                
+                new WorkExpirienceModel(
+                    new DateTime(2018, 11, 0), DateTime.Now,
+                    "Task Retail Technology",
+                    "Xamarin .NET Software Developer",
+                    "Wrocław", "Poland"
+                    ),
+                new WorkExpirienceModel(
+                    new DateTime(2017, 01, 0), new DateTime(2018, 11, 0),
+                    "Self-Employed",
+                    ".NET Software Developer",
+                    "Minsk", "Belarus"
+                    ),
+                new WorkExpirienceModel(
+                    new DateTime(2012, 09, 0), new DateTime(2017, 01, 0),
+                    "Alvitex Group",
+                    "Industrial Automation Software Developer",
+                    "Minsk", "Belarus"
+                    ),
             };
         }
     }

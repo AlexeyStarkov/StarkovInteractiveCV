@@ -4,6 +4,7 @@
              xmlns:mainPage="clr-namespace:StarkovInteractiveCV.VisualElements.Pages.MainPage"
              xmlns:ffimage="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
              xmlns:ffimagesvg="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
+             xmlns:uiModels="clr-namespace:StarkovInteractiveCV.UIModels"
              x:DataType="mainPage:MainPageViewModel"
              x:Class="StarkovInteractiveCV.VisualElements.Pages.MainPage.MainPage">
     <ContentPage.Resources>
@@ -32,25 +33,46 @@
             <Style TargetType="Label" x:Key="SatelliteTextStyle">
                 <Setter Property="HorizontalOptions" Value="Center"/>
             </Style>
+            <Style TargetType="Label" x:Key="WorkHeaderStyle">
+                <Setter Property="FontFamily" Value="{DynamicResource PrimaryFont}"/>
+                <Setter Property="FontSize" Value="18"/>
+            </Style>
         </ResourceDictionary>
     </ContentPage.Resources>
 
     <Grid BackgroundColor="{DynamicResource PrimaryBackgroundColor}">
         <ScrollView x:Name="Scroll" VerticalScrollBarVisibility="Never">
-            <StackLayout x:Name="ScrollableStack">
-                <BoxView Color="Aqua" HeightRequest="100" Margin="10"/>
-                <BoxView Color="Black" HeightRequest="100" Margin="10"/>
-                <BoxView Color="DarkRed" HeightRequest="100" Margin="10"/>
-                <BoxView Color="Brown" HeightRequest="100" Margin="10"/>
-                <BoxView Color="Aqua" HeightRequest="200" Margin="10"/>
-                <BoxView Color="MistyRose" HeightRequest="200" Margin="10"/>
-                <BoxView Color="Aqua" HeightRequest="200" Margin="10"/>
-                <BoxView Color="Green" HeightRequest="200" Margin="10"/>
-                <BoxView Color="Aqua" HeightRequest="200" Margin="10"/>
-                <BoxView Color="Yellow" HeightRequest="200" Margin="10"/>
-                <BoxView Color="Aqua" HeightRequest="200" Margin="10"/>
-                <BoxView Color="Azure" HeightRequest="200" Margin="10"/>
-                <BoxView Color="Aqua" HeightRequest="200" Margin="10"/>
+            <StackLayout x:Name="ScrollableStack" BindableLayout.ItemsSource="{Binding WorkExpirienceCollection}">
+                <BindableLayout.ItemTemplate>
+                    <DataTemplate x:DataType="uiModels:WorkExpirienceModel">
+                        <Frame Margin="10,5" CornerRadius="20" Padding="10,0" HasShadow="True" BackgroundColor="{DynamicResource SecondaryBacgroundColor}" HeightRequest="300">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                </Grid.RowDefinitions>
+
+                                <StackLayout Grid.Row="0" HorizontalOptions="Start" VerticalOptions="Center" Orientation="Horizontal" Spacing="10">
+                                    <Label FormattedText="{Binding WorkPeriodString}"/>
+                                    <Label Text=" - "/>
+                                    <Label Text="{Binding CompanyName}" TextColor="{DynamicResource AccentColor}"/>
+                                </StackLayout>
+
+                                <Label Grid.Row="1" HorizontalOptions="Start" VerticalOptions="Center">
+                                    <Label.FormattedText>
+                                        <FormattedString>
+                                            <Span Text="Role: " FontFamily="{DynamicResource PrimaryFont}" FontSize="16"/>
+                                            <Span Text="{Binding PositionName}" FontFamily="{DynamicResource SecondaryFont}" FontSize="16"/>
+                                        </FormattedString>
+                                    </Label.FormattedText>
+                                </Label>
+
+                                <Label Grid.Row="2" Text="{Binding WorkPlaceName}" FontFamily="{DynamicResource SecondaryFont}" FontSize="16" VerticalOptions="Center" HorizontalOptions="Start"/>
+                            </Grid>
+                        </Frame>
+                    </DataTemplate>
+                </BindableLayout.ItemTemplate>
             </StackLayout>
         </ScrollView>
 
