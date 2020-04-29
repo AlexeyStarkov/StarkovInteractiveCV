@@ -9,7 +9,7 @@ namespace StarkovInteractiveCV.UIModels
         public DateTime StartWorkDate { get; }
         public DateTime EndWorkDate { get; }
         public Period WorkPeriod => Period.Between(LocalDateTime.FromDateTime(StartWorkDate), IsCurrentWork ? LocalDateTime.FromDateTime(DateTime.Now) : LocalDateTime.FromDateTime(EndWorkDate));
-        public bool IsCurrentWork => EndWorkDate.Ticks == 0;
+        public bool IsCurrentWork => EndWorkDate.Year == DateTime.Now.Year && EndWorkDate.Month == DateTime.Now.Month && EndWorkDate.Day == DateTime.Now.Day;
         public string CompanyName { get; }
         public string PositionName { get; }
         public string WorkPlaceName { get; }
@@ -24,13 +24,12 @@ namespace StarkovInteractiveCV.UIModels
 
                 if (IsCurrentWork)
                 {
-                    formattedString.Spans.Add(new Span() { Text = EndWorkDate.ToString("MMM yyyy") });
+                    var newFont = (string)(OnPlatform<string>)App.Current.Resources["SecondaryFont"];
+                    formattedString.Spans.Add(new Span() { Text = "Present", FontFamily = newFont });
                 }
                 else
                 {
-                    var vvv = App.Current.Resources["SecondaryFont"];
-                    var newFont = (string)App.Current.Resources["SecondaryFont"];
-                    formattedString.Spans.Add(new Span() { Text = "Present", FontFamily = newFont });
+                    formattedString.Spans.Add(new Span() { Text = EndWorkDate.ToString("MMM yyyy") });
                 }
 
                 formattedString.Spans.Add(new Span() { Text = " (" });

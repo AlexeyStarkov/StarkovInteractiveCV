@@ -60,7 +60,7 @@ namespace StarkovInteractiveCV.VisualElements.Pages.MainPage
                 if (Height > 0 && Width > 0)
                 {
                     HeaderFrame.HeightRequest = _headerGridHeightDefault = this.Height * HeaderGridHeightFactor;
-                    ScrollableStack.Padding = new Thickness(0, _headerGridHeightDefault, 0, 0);
+                    ScrollableStack.Padding = new Thickness(0, _headerGridHeightDefault, 0, 150);
                 }
             };
 

@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:system="clr-namespace:System;assembly=netstandard"
              xmlns:mainPage="clr-namespace:StarkovInteractiveCV.VisualElements.Pages.MainPage"
              xmlns:ffimage="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
              xmlns:ffimagesvg="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
@@ -30,22 +31,25 @@
                 <Setter Property="VerticalOptions" Value="Center"/>
                 <Setter Property="HorizontalOptions" Value="Center"/>
             </Style>
-            <Style TargetType="Label" x:Key="SatelliteTextStyle">
-                <Setter Property="HorizontalOptions" Value="Center"/>
+
+
+            <Style TargetType="Label" x:Key="LabelBaseStyle">
+                <Setter Property="TextColor" Value="{DynamicResource PrimaryTextColor}"/>
+                <Setter Property="FontFamily" Value="{DynamicResource PrimaryFont}"/>
             </Style>
-            <Style TargetType="Label" x:Key="WorkHeaderStyle">
+            <Style TargetType="Label" x:Key="WorkHeaderStyle" BasedOn="{StaticResource LabelBaseStyle}">
                 <Setter Property="FontFamily" Value="{DynamicResource PrimaryFont}"/>
                 <Setter Property="FontSize" Value="18"/>
             </Style>
         </ResourceDictionary>
     </ContentPage.Resources>
 
-    <Grid BackgroundColor="{DynamicResource PrimaryBackgroundColor}">
+    <Grid BackgroundColor="{DynamicResource TertiaryBacgroundColor}">
         <ScrollView x:Name="Scroll" VerticalScrollBarVisibility="Never">
             <StackLayout x:Name="ScrollableStack" BindableLayout.ItemsSource="{Binding WorkExpirienceCollection}">
                 <BindableLayout.ItemTemplate>
                     <DataTemplate x:DataType="uiModels:WorkExpirienceModel">
-                        <Frame Margin="10,5" CornerRadius="20" Padding="10,0" HasShadow="True" BackgroundColor="{DynamicResource SecondaryBacgroundColor}" HeightRequest="300">
+                        <Frame Margin="10" CornerRadius="20" Padding="10" HasShadow="True" BackgroundColor="{DynamicResource SecondaryBacgroundColor}" HeightRequest="120">
                             <Grid>
                                 <Grid.RowDefinitions>
                                     <RowDefinition Height="*"/>
@@ -53,13 +57,17 @@
                                     <RowDefinition Height="*"/>
                                 </Grid.RowDefinitions>
 
-                                <StackLayout Grid.Row="0" HorizontalOptions="Start" VerticalOptions="Center" Orientation="Horizontal" Spacing="10">
-                                    <Label FormattedText="{Binding WorkPeriodString}"/>
-                                    <Label Text=" - "/>
-                                    <Label Text="{Binding CompanyName}" TextColor="{DynamicResource AccentColor}"/>
-                                </StackLayout>
+                                <Label Grid.Row="0" HorizontalOptions="Start" VerticalOptions="Center" Style="{StaticResource LabelBaseStyle}">
+                                    <Label.FormattedText>
+                                        <FormattedString>
+                                            <Span Text="{Binding CompanyName}" TextColor="{DynamicResource SecondaryTextColor}" FontSize="16"/>
+                                            <Span Text="{x:Static system:Environment.NewLine}"/>
+                                            <Span Text="{Binding WorkPeriodString}"/>
+                                        </FormattedString>
+                                    </Label.FormattedText>
+                                </Label>
 
-                                <Label Grid.Row="1" HorizontalOptions="Start" VerticalOptions="Center">
+                                <Label Grid.Row="1" HorizontalOptions="Start" VerticalOptions="Center" Style="{StaticResource LabelBaseStyle}">
                                     <Label.FormattedText>
                                         <FormattedString>
                                             <Span Text="Role: " FontFamily="{DynamicResource PrimaryFont}" FontSize="16"/>
@@ -68,7 +76,7 @@
                                     </Label.FormattedText>
                                 </Label>
 
-                                <Label Grid.Row="2" Text="{Binding WorkPlaceName}" FontFamily="{DynamicResource SecondaryFont}" FontSize="16" VerticalOptions="Center" HorizontalOptions="Start"/>
+                                <Label Grid.Row="2" Text="{Binding WorkPlaceName}" Style="{StaticResource LabelBaseStyle}" FontFamily="{DynamicResource SecondaryFont}" FontSize="16" VerticalOptions="Center" HorizontalOptions="Start"/>
                             </Grid>
                         </Frame>
                     </DataTemplate>
@@ -140,7 +148,7 @@
                         </Frame.GestureRecognizers>
                         <ffimagesvg:SvgCachedImage Source="{DynamicResource ThemeSwitchIcon}" Style="{StaticResource SatelliteIconSvgStyle}" HeightRequest="25"/>
                     </Frame>
-                    <Label x:Name="NameLabel" Text="ALEKSEI STARKOV" Opacity="0" TextColor="{DynamicResource PrimaryTextColor}" FontFamily="{DynamicResource PrimaryFont}" FontSize="20" HorizontalOptions="Center" VerticalOptions="Center"/>
+                    <Label x:Name="NameLabel" Text="ALEKSEI STARKOV" Opacity="0" Style="{StaticResource LabelBaseStyle}" FontSize="20" HorizontalOptions="Center" VerticalOptions="Center"/>
                 </Grid>
 
                 <ffimage:CachedImage x:Name="Photo" Source="{DynamicResource CirclePhoto}" VerticalOptions="Center" HorizontalOptions="Center" Aspect="AspectFit"/>

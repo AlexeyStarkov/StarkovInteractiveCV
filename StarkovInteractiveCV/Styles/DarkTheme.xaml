@@ -5,9 +5,11 @@
 
     <Color x:Key="PrimaryBackgroundColor">#454544</Color>
     <Color x:Key="SecondaryBacgroundColor">#4F4E4F</Color>
+    <Color x:Key="TertiaryBacgroundColor">#454544</Color>
     <Color x:Key="AccentColor">#33A6CC</Color>
 
     <Color x:Key="PrimaryTextColor">#FFFFFF</Color>
+    <Color x:Key="SecondaryTextColor">#33A6CC</Color>
 
     <!--Fonts-->
     <OnPlatform x:Key="PrimaryFont" x:TypeArguments="x:String" iOS="ClarikaGeometric-Bold" Android="Fonts/ClarikaGeometricBold.otf#ClarikaGeometricBold"/>
