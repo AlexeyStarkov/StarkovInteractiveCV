@@ -30,7 +30,9 @@ namespace StarkovInteractiveCV.Droid
 
             TabLayoutResource = Resource.Layout.Tabbar;
             ToolbarResource = Resource.Layout.Toolbar;
-            
+
+            Rg.Plugins.Popup.Popup.Init(this, savedInstanceState);
+
             base.OnCreate(savedInstanceState);
             SvgCachedImage.Init();
             CachedImageRenderer.Init(false);

@@ -11,9 +11,13 @@
     <Color x:Key="PrimaryTextColor">#FFFFFF</Color>
     <Color x:Key="SecondaryTextColor">#33A6CC</Color>
 
+    <!--Symbols-->
+    <x:String x:Key="CloseXSymbol">&#xf00d;</x:String>
+
     <!--Fonts-->
     <OnPlatform x:Key="PrimaryFont" x:TypeArguments="x:String" iOS="ClarikaGeometric-Bold" Android="Fonts/ClarikaGeometricBold.otf#ClarikaGeometricBold"/>
     <OnPlatform x:Key="SecondaryFont" x:TypeArguments="x:String" iOS="ClarikaGeometric-Regular" Android="Fonts/ClarikaGeometricRegular.otf#ClarikaGeometricRegular"/>
+    <OnPlatform x:Key="FontAwesome" x:TypeArguments="x:String" iOS="FontAwesome" Android="Fonts/FontAwesome.ttf#FontAwesome"/>
 
     <!--SVGs-->
     <x:String x:Key="ContactIcon">resource://ContactDark.svg</x:String>
@@ -27,6 +31,13 @@
     <x:String x:Key="WorkflowIcon">resource://WorkflowDark.svg</x:String>
     <x:String x:Key="HamburgerMenuIcon">resource://HamburgerMenuDark.svg</x:String>
     <x:String x:Key="ThemeSwitchIcon">resource://ThemeSwitchDark.svg</x:String>
+
+    <x:String x:Key="BlueDakarIcon">resource://BlueDakar.svg</x:String>    
+    <x:String x:Key="BlueMarketingIcon">resource://BlueMarketing.svg</x:String>
+    <x:String x:Key="BlueShootingIcon">resource://BlueShooting.svg</x:String>
+    <x:String x:Key="BlueTourismIcon">resource://BlueTourism.svg</x:String>
+    <x:String x:Key="BlueCarIcon">resource://BlueCar.svg</x:String>
+    <x:String x:Key="WhiteCloseXIcon">resource://WhiteCloseX.svg</x:String>
 
     <!--PNG-->
     <x:String x:Key="CirclePhoto">resource://CirclePhoto.png</x:String>

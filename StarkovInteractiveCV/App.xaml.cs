@@ -1,8 +1,10 @@
 ﻿using Prism;
 using Prism.Ioc;
+using Prism.Plugin.Popups;
 using Prism.Unity;
 using StarkovInteractiveCV.Interfaces;
 using StarkovInteractiveCV.Services;
+using StarkovInteractiveCV.VisualElements.Pages.HobbiesPopup;
 using StarkovInteractiveCV.VisualElements.Pages.MainPage;
 using Xamarin.Forms;
 
@@ -29,7 +31,10 @@ namespace StarkovInteractiveCV
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
+            containerRegistry.RegisterPopupNavigationService();
+
             containerRegistry.RegisterForNavigation<MainPage, MainPageViewModel>();
+            containerRegistry.RegisterForNavigation<HobbiesPopup, HobbiesPopupViewModel>();
 
             containerRegistry.RegisterSingleton<ISettingsService, SettingsService>();
             containerRegistry.RegisterSingleton<IThemeService, ThemeService>();

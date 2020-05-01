@@ -6,6 +6,7 @@
              xmlns:ffimage="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
              xmlns:ffimagesvg="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
              xmlns:uiModels="clr-namespace:StarkovInteractiveCV.UIModels"
+             xmlns:customControls="clr-namespace:StarkovInteractiveCV.Controls"
              x:DataType="mainPage:MainPageViewModel"
              x:Class="StarkovInteractiveCV.VisualElements.Pages.MainPage.MainPage">
     <ContentPage.Resources>
@@ -14,6 +15,16 @@
                 <Setter Property="Spacing" Value="5"/>
                 <Setter Property="VerticalOptions" Value="Center"/>
                 <Setter Property="HorizontalOptions" Value="Center"/>
+            </Style>
+            <Style TargetType="customControls:ContentButton" x:Key="SatelliteButtonStyle">
+                <Setter Property="HeightRequest" Value="50"/>
+                <Setter Property="WidthRequest" Value="50"/>
+                <Setter Property="CornerRadius" Value="25"/>
+                <Setter Property="Padding" Value="0"/>
+                <Setter Property="VerticalOptions" Value="Center"/>
+                <Setter Property="HorizontalOptions" Value="Center"/>
+                <Setter Property="BackgroundColor" Value="{DynamicResource AccentColor}"/>
+                <Setter Property="HasShadow" Value="True"/>
             </Style>
             <Style TargetType="Frame" x:Key="SatelliteIconFrameStyle">
                 <Setter Property="HeightRequest" Value="50"/>
@@ -30,6 +41,7 @@
                 <Setter Property="Aspect" Value="AspectFit"/>
                 <Setter Property="VerticalOptions" Value="Center"/>
                 <Setter Property="HorizontalOptions" Value="Center"/>
+                <Setter Property="InputTransparent" Value="True"/>
             </Style>
 
 
@@ -86,60 +98,41 @@
 
         <Frame x:Name="HeaderFrame" HasShadow="True" VerticalOptions="Start" BackgroundColor="{DynamicResource SecondaryBacgroundColor}">
             <Grid>
-                <Frame x:Name="HobbiesButtonFrame" Style="{StaticResource SatelliteIconFrameStyle}">
-                    <Frame.GestureRecognizers>
-                        <TapGestureRecognizer Command="{Binding OpenProfileCommand}"/>
-                    </Frame.GestureRecognizers>
+                <customControls:ContentButton x:Name="HobbiesButton" Command="{Binding OpenHobbiesCommand}" Style="{StaticResource SatelliteButtonStyle}">
                     <ffimagesvg:SvgCachedImage Source="{DynamicResource HobbiesIcon}" Style="{StaticResource SatelliteIconSvgStyle}"/>
-                </Frame>
-                <Frame x:Name="WorkflowButtonFrame" Style="{StaticResource SatelliteIconFrameStyle}">
-                    <Frame.GestureRecognizers>
-                        <TapGestureRecognizer Command="{Binding OpenProfileCommand}"/>
-                    </Frame.GestureRecognizers>
+                </customControls:ContentButton>
+
+                <customControls:ContentButton x:Name="WorkflowButton" Command="{Binding OpenProfileCommand}" Style="{StaticResource SatelliteButtonStyle}">
                     <ffimagesvg:SvgCachedImage Source="{DynamicResource WorkflowIcon}" Style="{StaticResource SatelliteIconSvgStyle}"/>
-                </Frame>
-                <Frame x:Name="DevSkilsButtonFrame" Style="{StaticResource SatelliteIconFrameStyle}">
-                    <Frame.GestureRecognizers>
-                        <TapGestureRecognizer Command="{Binding OpenProfileCommand}"/>
-                    </Frame.GestureRecognizers>
+                </customControls:ContentButton>
+                
+                <customControls:ContentButton x:Name="DevSkilsButton" Command="{Binding OpenProfileCommand}" Style="{StaticResource SatelliteButtonStyle}">
                     <ffimagesvg:SvgCachedImage Source="{DynamicResource SkillsIcon}" Style="{StaticResource SatelliteIconSvgStyle}"/>
-                </Frame>
-                <Frame x:Name="ToolsButtonFrame" Style="{StaticResource SatelliteIconFrameStyle}">
-                    <Frame.GestureRecognizers>
-                        <TapGestureRecognizer Command="{Binding OpenProfileCommand}"/>
-                    </Frame.GestureRecognizers>
+                </customControls:ContentButton>
+
+                <customControls:ContentButton x:Name="ToolsButton" Command="{Binding OpenProfileCommand}" Style="{StaticResource SatelliteButtonStyle}">
                     <ffimagesvg:SvgCachedImage Source="{DynamicResource ToolsIcon}" Style="{StaticResource SatelliteIconSvgStyle}"/>
-                </Frame>
-                <Frame x:Name="ContactButtonFrame" Style="{StaticResource SatelliteIconFrameStyle}">
-                    <Frame.GestureRecognizers>
-                        <TapGestureRecognizer Command="{Binding OpenProfileCommand}"/>
-                    </Frame.GestureRecognizers>
+                </customControls:ContentButton>
+                
+                <customControls:ContentButton x:Name="ContactButton" Command="{Binding OpenProfileCommand}" Style="{StaticResource SatelliteButtonStyle}">
                     <ffimagesvg:SvgCachedImage Source="{DynamicResource ContactIcon}" Style="{StaticResource SatelliteIconSvgStyle}"/>
-                </Frame>
-                <Frame x:Name="SocialButtonFrame" Style="{StaticResource SatelliteIconFrameStyle}">
-                    <Frame.GestureRecognizers>
-                        <TapGestureRecognizer Command="{Binding OpenProfileCommand}"/>
-                    </Frame.GestureRecognizers>
+                </customControls:ContentButton>
+                
+                <customControls:ContentButton x:Name="SocialButton" Command="{Binding OpenProfileCommand}" Style="{StaticResource SatelliteButtonStyle}">
                     <ffimagesvg:SvgCachedImage Source="{DynamicResource SocialIcon}" Style="{StaticResource SatelliteIconSvgStyle}"/>
-                </Frame>
-                <Frame x:Name="LanguagesButtonFrame" Style="{StaticResource SatelliteIconFrameStyle}">
-                    <Frame.GestureRecognizers>
-                        <TapGestureRecognizer Command="{Binding OpenProfileCommand}"/>
-                    </Frame.GestureRecognizers>
+                </customControls:ContentButton>
+
+                <customControls:ContentButton x:Name="LanguagesButton" Command="{Binding OpenProfileCommand}" Style="{StaticResource SatelliteButtonStyle}">
                     <ffimagesvg:SvgCachedImage Source="{DynamicResource LanguagesIcon}" Style="{StaticResource SatelliteIconSvgStyle}"/>
-                </Frame>
-                <Frame x:Name="PersonalityButtonFrame" Style="{StaticResource SatelliteIconFrameStyle}">
-                    <Frame.GestureRecognizers>
-                        <TapGestureRecognizer Command="{Binding OpenProfileCommand}"/>
-                    </Frame.GestureRecognizers>
+                </customControls:ContentButton>
+                
+                <customControls:ContentButton x:Name="PersonalityButton" Command="{Binding OpenProfileCommand}" Style="{StaticResource SatelliteButtonStyle}">
                     <ffimagesvg:SvgCachedImage Source="{DynamicResource StrengthIcon}" Style="{StaticResource SatelliteIconSvgStyle}"/>
-                </Frame>
-                <Frame x:Name="ProfileButtonFrame" Style="{StaticResource SatelliteIconFrameStyle}">
-                    <Frame.GestureRecognizers>
-                        <TapGestureRecognizer Command="{Binding OpenProfileCommand}"/>
-                    </Frame.GestureRecognizers>
+                </customControls:ContentButton>
+                
+                <customControls:ContentButton x:Name="ProfileButton" Command="{Binding OpenProfileCommand}" Style="{StaticResource SatelliteIconFrameStyle}">
                     <ffimagesvg:SvgCachedImage Source="{DynamicResource ProfileIcon}" Style="{StaticResource SatelliteIconSvgStyle}"/>
-                </Frame>
+                </customControls:ContentButton>
 
                 <Grid x:Name="NameGrid" VerticalOptions="Start">
                     <Frame Style="{StaticResource SatelliteIconFrameStyle}" BackgroundColor="{DynamicResource PrimaryBackgroundColor}" HorizontalOptions="End" HeightRequest="40" WidthRequest="40" CornerRadius="20" Margin="0,0,10,0">

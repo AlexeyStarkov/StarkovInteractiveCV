@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Input;
 using Prism.Navigation;
+using Prism.Services.Dialogs;
 using StarkovInteractiveCV.Interfaces;
 using StarkovInteractiveCV.UIModels;
 using StarkovInteractiveCV.VisualElements.BaseObjects;
@@ -23,14 +24,19 @@ namespace StarkovInteractiveCV.VisualElements.Pages.MainPage
 
         public ICommand OpenProfileCommand => new Command(async (parameter) =>
         {
+            
+        });
 
+        public ICommand OpenHobbiesCommand => new Command(async (parameter) =>
+        {
+            await _navigationService.NavigateAsync(nameof(HobbiesPopup));
         });
 
         public ICommand SwitchThemeCommand => new Command((parameter) => _themeService.SwitchTheme());
 
-        public MainPageViewModel(INavigationService navigationService, IThemeService themeService)
-            : base(navigationService)
-         {
+        public MainPageViewModel(INavigationService navigationService, IDialogService dialogService, IThemeService themeService)
+            : base(navigationService, dialogService)
+        {
             _themeService = themeService;
         }
 
