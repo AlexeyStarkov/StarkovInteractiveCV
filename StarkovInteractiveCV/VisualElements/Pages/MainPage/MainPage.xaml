@@ -102,7 +102,7 @@
                     <ffimagesvg:SvgCachedImage Source="{DynamicResource HobbiesIcon}" Style="{StaticResource SatelliteIconSvgStyle}"/>
                 </customControls:ContentButton>
 
-                <customControls:ContentButton x:Name="WorkflowButton" Command="{Binding OpenProfileCommand}" Style="{StaticResource SatelliteButtonStyle}">
+                <customControls:ContentButton x:Name="WorkflowButton" Command="{Binding OpenWorkflowExpirienceCommand}" Style="{StaticResource SatelliteButtonStyle}">
                     <ffimagesvg:SvgCachedImage Source="{DynamicResource WorkflowIcon}" Style="{StaticResource SatelliteIconSvgStyle}"/>
                 </customControls:ContentButton>
                 

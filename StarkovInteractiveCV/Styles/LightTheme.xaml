@@ -7,17 +7,18 @@
     <Color x:Key="SecondaryBacgroundColor">#E6E6E6</Color>
     <Color x:Key="TertiaryBacgroundColor">#E6E6E6</Color>
     <Color x:Key="AccentColor">#33A6CC</Color>
-    <Color x:Key="PopupBackgroundColor">#DA000000</Color>
+    <Color x:Key="PopupBackgroundColor">#EA000000</Color>
 
     <Color x:Key="PrimaryTextColor">#000000</Color>
     <Color x:Key="SecondaryTextColor">#33A6CC</Color>
 
     <!--Symbols-->
-    <x:String x:Key="CloseXSymbol">&#xf00d;</x:String>
+    <x:String x:Key="BulletChar">&#xf0da;</x:String>
 
     <!--Fonts-->
     <OnPlatform x:Key="PrimaryFont" x:TypeArguments="x:String" iOS="ClarikaGeometric-Bold" Android="Fonts/ClarikaGeometricBold.otf#ClarikaGeometricBold"/>
     <OnPlatform x:Key="SecondaryFont" x:TypeArguments="x:String" iOS="ClarikaGeometric-Regular" Android="Fonts/ClarikaGeometricRegular.otf#ClarikaGeometricRegular"/>
+    <OnPlatform x:Key="AccentFont" x:TypeArguments="x:String" iOS="GothamMedium" Android="Fonts/gotham-medium.ttf#gotham-medium"/>
 
     <!--SVGs-->
     <x:String x:Key="ContactIcon">resource://ContactLight.svg</x:String>

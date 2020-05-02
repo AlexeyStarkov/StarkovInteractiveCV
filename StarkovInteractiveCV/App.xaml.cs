@@ -7,6 +7,7 @@ using StarkovInteractiveCV.Services;
 using StarkovInteractiveCV.VisualElements.Pages.HobbiesPopup;
 using StarkovInteractiveCV.VisualElements.Pages.MainPage;
 using StarkovInteractiveCV.VisualElements.Pages.SocialNetworksPopup;
+using StarkovInteractiveCV.VisualElements.Pages.WorkflowExpiriencePopup;
 using Xamarin.Forms;
 
 namespace StarkovInteractiveCV
@@ -37,6 +38,7 @@ namespace StarkovInteractiveCV
             containerRegistry.RegisterForNavigation<MainPage, MainPageViewModel>();
             containerRegistry.RegisterForNavigation<HobbiesPopup, HobbiesPopupViewModel>();
             containerRegistry.RegisterForNavigation<SocialNetworksPopup, SocialNetworksPopupViewModel>();
+            containerRegistry.RegisterForNavigation<WorkflowExpiriencePopup, WorkflowExpiriencePopupViewModel>();
 
             containerRegistry.RegisterSingleton<ISettingsService, SettingsService>();
             containerRegistry.RegisterSingleton<IThemeService, ThemeService>();
