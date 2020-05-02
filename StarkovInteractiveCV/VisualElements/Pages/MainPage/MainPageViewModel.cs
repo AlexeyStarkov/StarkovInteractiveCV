@@ -33,6 +33,8 @@ namespace StarkovInteractiveCV.VisualElements.Pages.MainPage
 
         public ICommand OpenWorkflowExpirienceCommand => new Command(async (parameter) => await _navigationService.NavigateAsync(nameof(WorkflowExpiriencePopup)));
 
+        public ICommand OpenDevSkillsCommand => new Command(async (parameter) => await _navigationService.NavigateAsync(nameof(DevSkillsPopup)));
+
         public ICommand SwitchThemeCommand => new Command((parameter) => _themeService.SwitchTheme());
 
         public MainPageViewModel(INavigationService navigationService, IDialogService dialogService, IThemeService themeService)

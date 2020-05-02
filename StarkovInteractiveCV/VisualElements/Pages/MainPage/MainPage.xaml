@@ -6,7 +6,7 @@
              xmlns:ffimage="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
              xmlns:ffimagesvg="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
              xmlns:uiModels="clr-namespace:StarkovInteractiveCV.UIModels"
-             xmlns:customControls="clr-namespace:StarkovInteractiveCV.Controls"
+             xmlns:customControls="clr-namespace:StarkovInteractiveCV.VisualElements.Controls"
              x:DataType="mainPage:MainPageViewModel"
              x:Class="StarkovInteractiveCV.VisualElements.Pages.MainPage.MainPage">
     <ContentPage.Resources>
@@ -106,7 +106,7 @@
                     <ffimagesvg:SvgCachedImage Source="{DynamicResource WorkflowIcon}" Style="{StaticResource SatelliteIconSvgStyle}"/>
                 </customControls:ContentButton>
                 
-                <customControls:ContentButton x:Name="DevSkilsButton" Command="{Binding OpenProfileCommand}" Style="{StaticResource SatelliteButtonStyle}">
+                <customControls:ContentButton x:Name="DevSkilsButton" Command="{Binding OpenDevSkillsCommand}" Style="{StaticResource SatelliteButtonStyle}">
                     <ffimagesvg:SvgCachedImage Source="{DynamicResource SkillsIcon}" Style="{StaticResource SatelliteIconSvgStyle}"/>
                 </customControls:ContentButton>
 

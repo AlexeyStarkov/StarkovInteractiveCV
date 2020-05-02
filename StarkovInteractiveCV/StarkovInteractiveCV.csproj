@@ -42,9 +42,9 @@
     <Folder Include="Resources\SVG\LightTheme\" />
     <Folder Include="Resources\SVG\DarkTheme\" />
     <Folder Include="VisualElements\Pages\HobbiesPopup\" />
-    <Folder Include="Controls\" />
     <Folder Include="VisualElements\Pages\SocialNetworksPopup\" />
     <Folder Include="VisualElements\Pages\WorkflowExpiriencePopup\" />
+    <Folder Include="VisualElements\Pages\DevSkillsPopup\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Remove="Styles\LightTheme %28copy%29.xaml.cs" />

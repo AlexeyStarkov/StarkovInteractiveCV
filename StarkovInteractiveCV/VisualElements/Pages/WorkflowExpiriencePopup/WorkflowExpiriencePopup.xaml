@@ -20,10 +20,45 @@
             HasBackgroundAnimation="True"/>
     </rgPage:PopupPage.Animation>
 
-    <StackLayout Spacing="20" VerticalOptions="Center" HorizontalOptions="Center" InputTransparent="True">
-        <Label Text="Workflow expirience" Margin="0,0,0,40" FontSize="35" TextColor="{DynamicResource AccentColor}" FontFamily="{DynamicResource PrimaryFont}" HorizontalOptions="Center"/>
+    <Grid InputTransparent="True">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="70"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Label Grid.Row="0" Text="Workflow expirience" FontSize="30" TextColor="{DynamicResource AccentColor}" FontFamily="{DynamicResource PrimaryFont}" HorizontalOptions="Center" VerticalOptions="Center"/>
+
+        <StackLayout Grid.Row="1" VerticalOptions="Center" HorizontalOptions="Center" >
+            <Grid ColumnSpacing="15">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Label Grid.Column="0" Text="Agile" FontSize="16" FontFamily="{DynamicResource AccentFont}" TextColor="White" HorizontalOptions="End" VerticalOptions="Center"/>
+                <Label Grid.Column="1" Text="Waterfall" FontSize="16" FontFamily="{DynamicResource AccentFont}" TextColor="White" HorizontalOptions="Start" VerticalOptions="Center"/>
+            </Grid>
+
+            <BoxView Color="White" HorizontalOptions="Center" HeightRequest="30" WidthRequest="1" Margin="0,10"/>
+
+            <Grid ColumnSpacing="15">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Label Grid.Column="0" Text="Self-sufficient unit" FontSize="16" FontFamily="{DynamicResource AccentFont}" TextColor="White" HorizontalOptions="End" VerticalOptions="Center"/>
+                <Label Grid.Column="1" Text="Team Player" FontSize="16" FontFamily="{DynamicResource AccentFont}" TextColor="White" HorizontalOptions="Start" VerticalOptions="Center"/>
+            </Grid>
         
-        <Label Text="Agile" FontSize="30" FontFamily="{DynamicResource AccentFont}" TextColor="White" HorizontalOptions="Center"/>
-        <Label Text="Waterfall" FontSize="30" FontFamily="{DynamicResource AccentFont}" TextColor="White" HorizontalOptions="Center"/>
-    </StackLayout>
+            <BoxView Color="White" HorizontalOptions="Center" HeightRequest="30" WidthRequest="1" Margin="0,10"/>
+
+            <Grid ColumnSpacing="15">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Label Grid.Column="0" Text="Office work" FontSize="16" FontFamily="{DynamicResource AccentFont}" TextColor="White" HorizontalOptions="End" VerticalOptions="Center"/>
+                <Label Grid.Column="1" Text="Remote work" FontSize="16" FontFamily="{DynamicResource AccentFont}" TextColor="White" HorizontalOptions="Start" VerticalOptions="Center"/>
+            </Grid>
+        </StackLayout>
+    </Grid>
 </rgPage:PopupPage>

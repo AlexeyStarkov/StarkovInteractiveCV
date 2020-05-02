@@ -2,7 +2,7 @@
 using System.Windows.Input;
 using Xamarin.Forms;
 
-namespace StarkovInteractiveCV.Controls
+namespace StarkovInteractiveCV.VisualElements.Controls
 {
     public class ContentButton : Frame
     {

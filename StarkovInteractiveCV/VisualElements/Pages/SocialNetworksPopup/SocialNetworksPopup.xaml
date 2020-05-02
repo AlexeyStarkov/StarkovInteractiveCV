@@ -5,7 +5,7 @@
                   xmlns:rgAnimations="clr-namespace:Rg.Plugins.Popup.Animations;assembly=Rg.Plugins.Popup"
                   xmlns:ffsvg="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
                   xmlns:sicialPopup="clr-namespace:StarkovInteractiveCV.VisualElements.Pages.SocialNetworksPopup"
-                  xmlns:customControls="clr-namespace:StarkovInteractiveCV.Controls"
+                  xmlns:customControls="clr-namespace:StarkovInteractiveCV.VisualElements.Controls"
                   BackgroundColor="{DynamicResource PopupBackgroundColor}"
                   x:DataType="sicialPopup:SocialNetworksPopupViewModel"
                   x:Class="StarkovInteractiveCV.VisualElements.Pages.SocialNetworksPopup.SocialNetworksPopup">
