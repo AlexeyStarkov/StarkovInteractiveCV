@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<rgPage:PopupPage xmlns="http://xamarin.com/schemas/2014/forms"
+                  xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                  xmlns:rgPage="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
+                  xmlns:rgAnimations="clr-namespace:Rg.Plugins.Popup.Animations;assembly=Rg.Plugins.Popup"
+                  xmlns:ffsvg="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
+                  xmlns:sicialPopup="clr-namespace:StarkovInteractiveCV.VisualElements.Pages.SocialNetworksPopup"
+                  xmlns:customControls="clr-namespace:StarkovInteractiveCV.Controls"
+                  BackgroundColor="{DynamicResource PopupBackgroundColor}"
+                  x:DataType="sicialPopup:SocialNetworksPopupViewModel"
+                  x:Class="StarkovInteractiveCV.VisualElements.Pages.SocialNetworksPopup.SocialNetworksPopup">
+    <rgPage:PopupPage.Animation>
+        <rgAnimations:ScaleAnimation 
+            PositionIn="Bottom"
+            PositionOut="Bottom"
+            ScaleIn="1.2"
+            ScaleOut="0.8"
+            DurationIn="300"
+            DurationOut="300"
+            EasingIn="SinOut"
+            EasingOut="SinIn"
+            HasBackgroundAnimation="True"/>
+    </rgPage:PopupPage.Animation>
+
+    <rgPage:PopupPage.Resources>
+        <ResourceDictionary>
+            <Style TargetType="customControls:ContentButton" x:Key="SocialMediaButtonStyle">
+                <Setter Property="BackgroundColor" Value="{DynamicResource AccentColor}"/>
+                <Setter Property="CornerRadius" Value="30"/>
+                <Setter Property="WidthRequest" Value="60"/>
+                <Setter Property="HeightRequest" Value="60"/>
+                <Setter Property="VerticalOptions" Value="Center"/>
+                <Setter Property="HorizontalOptions" Value="Center"/>
+                <Setter Property="Padding" Value="0"/>
+            </Style>
+            <Style TargetType="ffsvg:SvgCachedImage" x:Key="SocialMediaButtonIconStyle">
+                <Setter Property="Aspect" Value="AspectFit"/>
+                <Setter Property="HeightRequest" Value="25"/>
+                <Setter Property="VerticalOptions" Value="Center"/>
+                <Setter Property="HorizontalOptions" Value="Center"/>
+            </Style>
+        </ResourceDictionary>
+    </rgPage:PopupPage.Resources>
+
+    <StackLayout Spacing="20" VerticalOptions="Center" HorizontalOptions="Center">
+        <customControls:ContentButton Command="{Binding OpenFacebookCommand}" Style="{StaticResource SocialMediaButtonStyle}">
+            <ffsvg:SvgCachedImage Source="{DynamicResource WhiteFacebookIcon}" Style="{StaticResource SocialMediaButtonIconStyle}"/>
+        </customControls:ContentButton>
+        <customControls:ContentButton Command="{Binding OpenInstagramCommand}" Style="{StaticResource SocialMediaButtonStyle}">
+            <ffsvg:SvgCachedImage Source="{DynamicResource WhiteInstagramIcon}" Style="{StaticResource SocialMediaButtonIconStyle}"/>
+        </customControls:ContentButton>
+        <customControls:ContentButton Command="{Binding OpenGithubCommand}" Style="{StaticResource SocialMediaButtonStyle}">
+            <ffsvg:SvgCachedImage Source="{DynamicResource WhiteGithubIcon}" Style="{StaticResource SocialMediaButtonIconStyle}"/>
+        </customControls:ContentButton>
+        <customControls:ContentButton Command="{Binding OpenLinkedInCommand}" Style="{StaticResource SocialMediaButtonStyle}">
+            <ffsvg:SvgCachedImage Source="{DynamicResource WhiteLinkedinIcon}" Style="{StaticResource SocialMediaButtonIconStyle}"/>
+        </customControls:ContentButton>
+    </StackLayout>
+</rgPage:PopupPage>

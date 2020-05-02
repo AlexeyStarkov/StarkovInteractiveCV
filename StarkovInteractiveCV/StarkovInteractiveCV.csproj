@@ -43,6 +43,7 @@
     <Folder Include="Resources\SVG\DarkTheme\" />
     <Folder Include="VisualElements\Pages\HobbiesPopup\" />
     <Folder Include="Controls\" />
+    <Folder Include="VisualElements\Pages\SocialNetworksPopup\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Remove="Styles\LightTheme %28copy%29.xaml.cs" />
@@ -80,6 +81,10 @@
     <None Remove="Resources\SVG\BlueShooting.svg" />
     <None Remove="Resources\SVG\BlueTourism.svg" />
     <None Remove="Resources\SVG\WhiteCloseX.svg" />
+    <None Remove="Resources\SVG\WhiteFacebook.svg" />
+    <None Remove="Resources\SVG\WhiteGithub.svg" />
+    <None Remove="Resources\SVG\WhiteInstagram.svg" />
+    <None Remove="Resources\SVG\WhiteLinkedin.svg" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Resources\SVG\DarkTheme\ContactDark.svg">
@@ -168,6 +173,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Resources\SVG\WhiteCloseX.svg">
       <LogicalName>WhiteCloseX.svg</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\SVG\WhiteFacebook.svg">
+      <LogicalName>WhiteFacebook.svg</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\SVG\WhiteGithub.svg">
+      <LogicalName>WhiteGithub.svg</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\SVG\WhiteInstagram.svg">
+      <LogicalName>WhiteInstagram.svg</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\SVG\WhiteLinkedin.svg">
+      <LogicalName>WhiteLinkedin.svg</LogicalName>
     </EmbeddedResource>
   </ItemGroup>
 </Project>

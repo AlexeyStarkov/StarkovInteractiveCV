@@ -27,6 +27,11 @@ namespace StarkovInteractiveCV.VisualElements.Pages.MainPage
             
         });
 
+        public ICommand OpenSocialNetworksCommand => new Command(async (parameter) =>
+        {
+            await _navigationService.NavigateAsync(nameof(SocialNetworksPopup));
+        });
+
         public ICommand OpenHobbiesCommand => new Command(async (parameter) =>
         {
             await _navigationService.NavigateAsync(nameof(HobbiesPopup));

@@ -7,6 +7,7 @@
     <Color x:Key="SecondaryBacgroundColor">#E6E6E6</Color>
     <Color x:Key="TertiaryBacgroundColor">#E6E6E6</Color>
     <Color x:Key="AccentColor">#33A6CC</Color>
+    <Color x:Key="PopupBackgroundColor">#DA000000</Color>
 
     <Color x:Key="PrimaryTextColor">#000000</Color>
     <Color x:Key="SecondaryTextColor">#33A6CC</Color>
@@ -37,6 +38,10 @@
     <x:String x:Key="BlueTourismIcon">resource://BlueTourism.svg</x:String>
     <x:String x:Key="BlueCarIcon">resource://BlueCar.svg</x:String>
     <x:String x:Key="WhiteCloseXIcon">resource://WhiteCloseX.svg</x:String>
+    <x:String x:Key="WhiteFacebookIcon">resource://WhiteFacebook.svg</x:String>
+    <x:String x:Key="WhiteGithubIcon">resource://WhiteGithub.svg</x:String>
+    <x:String x:Key="WhiteInstagramIcon">resource://WhiteInstagram.svg</x:String>
+    <x:String x:Key="WhiteLinkedinIcon">resource://WhiteLinkedin.svg</x:String>
 
     <!--PNG-->
     <x:String x:Key="CirclePhoto">resource://CirclePhoto.png</x:String>

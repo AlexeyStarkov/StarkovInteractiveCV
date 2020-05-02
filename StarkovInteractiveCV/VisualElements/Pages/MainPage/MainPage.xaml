@@ -118,7 +118,7 @@
                     <ffimagesvg:SvgCachedImage Source="{DynamicResource ContactIcon}" Style="{StaticResource SatelliteIconSvgStyle}"/>
                 </customControls:ContentButton>
                 
-                <customControls:ContentButton x:Name="SocialButton" Command="{Binding OpenProfileCommand}" Style="{StaticResource SatelliteButtonStyle}">
+                <customControls:ContentButton x:Name="SocialButton" Command="{Binding OpenSocialNetworksCommand}" Style="{StaticResource SatelliteButtonStyle}">
                     <ffimagesvg:SvgCachedImage Source="{DynamicResource SocialIcon}" Style="{StaticResource SatelliteIconSvgStyle}"/>
                 </customControls:ContentButton>
 

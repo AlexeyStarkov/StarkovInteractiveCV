@@ -6,6 +6,7 @@
                   xmlns:ffsvg="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
                   xmlns:hobbiesPopup="clr-namespace:StarkovInteractiveCV.VisualElements.Pages.HobbiesPopup"
                   xmlns:customControls="clr-namespace:StarkovInteractiveCV.Controls"
+                  BackgroundColor="{DynamicResource PopupBackgroundColor}"
                   x:DataType="hobbiesPopup:HobbiesPopupViewModel"
                   x:Class="StarkovInteractiveCV.VisualElements.Pages.HobbiesPopup.HobbiesPopup">
     <rgPage:PopupPage.Animation>
@@ -80,9 +81,7 @@
 
         <Grid Grid.Row="1" HeightRequest="50" WidthRequest="50" HorizontalOptions="Center" VerticalOptions="Center">
             <customControls:ContentButton Command="{Binding CloseCommand}" BackgroundColor="{DynamicResource AccentColor}" CornerRadius="25">
-                <customControls:ContentButton.Content>
-                    <ffsvg:SvgCachedImage Source="{DynamicResource WhiteCloseXIcon}" HeightRequest="15" Aspect="AspectFit" VerticalOptions="Center" HorizontalOptions="Center"/>
-                </customControls:ContentButton.Content>
+                <ffsvg:SvgCachedImage Source="{DynamicResource WhiteCloseXIcon}" HeightRequest="15" Aspect="AspectFit" VerticalOptions="Center" HorizontalOptions="Center"/>
             </customControls:ContentButton>
         </Grid>
     </Grid>
