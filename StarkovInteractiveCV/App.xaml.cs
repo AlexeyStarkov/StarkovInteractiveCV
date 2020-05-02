@@ -4,7 +4,9 @@ using Prism.Plugin.Popups;
 using Prism.Unity;
 using StarkovInteractiveCV.Interfaces;
 using StarkovInteractiveCV.Services;
+using StarkovInteractiveCV.VisualElements.Pages.DevSkillsPopup;
 using StarkovInteractiveCV.VisualElements.Pages.HobbiesPopup;
+using StarkovInteractiveCV.VisualElements.Pages.LanguagesPopup;
 using StarkovInteractiveCV.VisualElements.Pages.MainPage;
 using StarkovInteractiveCV.VisualElements.Pages.SocialNetworksPopup;
 using StarkovInteractiveCV.VisualElements.Pages.WorkflowExpiriencePopup;
@@ -39,6 +41,8 @@ namespace StarkovInteractiveCV
             containerRegistry.RegisterForNavigation<HobbiesPopup, HobbiesPopupViewModel>();
             containerRegistry.RegisterForNavigation<SocialNetworksPopup, SocialNetworksPopupViewModel>();
             containerRegistry.RegisterForNavigation<WorkflowExpiriencePopup, WorkflowExpiriencePopupViewModel>();
+            containerRegistry.RegisterForNavigation<DevSkillsPopup, DevSkillsPopupViewModel>();
+            containerRegistry.RegisterForNavigation<LanguagesPopup, LanguagesPopupViewModel>();
 
             containerRegistry.RegisterSingleton<ISettingsService, SettingsService>();
             containerRegistry.RegisterSingleton<IThemeService, ThemeService>();

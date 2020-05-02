@@ -3,10 +3,10 @@
                   xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
                   xmlns:rgPage="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
                   xmlns:rgAnimations="clr-namespace:Rg.Plugins.Popup.Animations;assembly=Rg.Plugins.Popup"
-                  xmlns:workflowPopup="clr-namespace:StarkovInteractiveCV.VisualElements.Pages.WorkflowExpiriencePopup"
+                  xmlns:languagesPopup="clr-namespace:StarkovInteractiveCV.VisualElements.Pages.LanguagesPopup"
                   BackgroundColor="{DynamicResource PopupBackgroundColor}"
-                  x:DataType="workflowPopup:WorkflowExpiriencePopupViewModel"
-                  x:Class="StarkovInteractiveCV.VisualElements.Pages.WorkflowExpiriencePopup.WorkflowExpiriencePopup">
+                  x:DataType="languagesPopup:LanguagesPopupViewModel"
+                  x:Class="StarkovInteractiveCV.VisualElements.Pages.LanguagesPopup.LanguagesPopup">
     <rgPage:PopupPage.Animation>
         <rgAnimations:ScaleAnimation 
             PositionIn="Center"
@@ -29,7 +29,7 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <Label Grid.Row="0" Text="Workflow expirience" FontSize="30" TextColor="{DynamicResource AccentColor}" FontFamily="{DynamicResource PrimaryFont}" HorizontalOptions="Center" VerticalOptions="Center"/>
+        <Label Grid.Row="0" Text="Languages" FontSize="30" TextColor="{DynamicResource AccentColor}" FontFamily="{DynamicResource PrimaryFont}" HorizontalOptions="Center" VerticalOptions="Center"/>
 
         <StackLayout Grid.Row="1" VerticalOptions="Center" HorizontalOptions="Center" >
             <Grid ColumnSpacing="15">
@@ -37,8 +37,8 @@
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
-                <Label Grid.Column="0" Text="Agile" FontSize="16" FontFamily="{DynamicResource AccentFont}" TextColor="White" HorizontalOptions="End" VerticalOptions="Center"/>
-                <Label Grid.Column="1" Text="Waterfall" FontSize="16" FontFamily="{DynamicResource AccentFont}" TextColor="White" HorizontalOptions="Start" VerticalOptions="Center"/>
+                <Label Grid.Column="0" Text="Polish" FontSize="16" FontFamily="{DynamicResource AccentFont}" TextColor="White" HorizontalOptions="End" VerticalOptions="Center"/>
+                <Label Grid.Column="1" Text="B1-B2" FontSize="16" FontFamily="{DynamicResource AccentFont}" TextColor="White" HorizontalOptions="Start" VerticalOptions="Center"/>
             </Grid>
 
             <BoxView Color="White" HorizontalOptions="Center" HeightRequest="30" WidthRequest="1" Margin="0,10"/>
@@ -48,8 +48,8 @@
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
-                <Label Grid.Column="0" Text="Self-sufficient unit" FontSize="16" FontFamily="{DynamicResource AccentFont}" TextColor="White" HorizontalOptions="End" VerticalOptions="Center"/>
-                <Label Grid.Column="1" Text="Team Player" FontSize="16" FontFamily="{DynamicResource AccentFont}" TextColor="White" HorizontalOptions="Start" VerticalOptions="Center"/>
+                <Label Grid.Column="0" Text="English" FontSize="16" FontFamily="{DynamicResource AccentFont}" TextColor="White" HorizontalOptions="End" VerticalOptions="Center"/>
+                <Label Grid.Column="1" Text="B1-B2" FontSize="16" FontFamily="{DynamicResource AccentFont}" TextColor="White" HorizontalOptions="Start" VerticalOptions="Center"/>
             </Grid>
         
             <BoxView Color="White" HorizontalOptions="Center" HeightRequest="30" WidthRequest="1" Margin="0,10"/>
@@ -59,8 +59,8 @@
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
-                <Label Grid.Column="0" Text="Office work" FontSize="16" FontFamily="{DynamicResource AccentFont}" TextColor="White" HorizontalOptions="End" VerticalOptions="Center"/>
-                <Label Grid.Column="1" Text="Remote work" FontSize="16" FontFamily="{DynamicResource AccentFont}" TextColor="White" HorizontalOptions="Start" VerticalOptions="Center"/>
+                <Label Grid.Column="0" Text="Russian" FontSize="16" FontFamily="{DynamicResource AccentFont}" TextColor="White" HorizontalOptions="End" VerticalOptions="Center"/>
+                <Label Grid.Column="1" Text="Native" FontSize="16" FontFamily="{DynamicResource AccentFont}" TextColor="White" HorizontalOptions="Start" VerticalOptions="Center"/>
             </Grid>
         </StackLayout>
     </Grid>

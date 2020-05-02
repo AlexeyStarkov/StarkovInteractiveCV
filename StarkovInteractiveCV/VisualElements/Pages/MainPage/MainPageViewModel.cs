@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Windows.Input;
 using Prism.Navigation;
 using Prism.Services.Dialogs;
@@ -34,6 +33,8 @@ namespace StarkovInteractiveCV.VisualElements.Pages.MainPage
         public ICommand OpenWorkflowExpirienceCommand => new Command(async (parameter) => await _navigationService.NavigateAsync(nameof(WorkflowExpiriencePopup)));
 
         public ICommand OpenDevSkillsCommand => new Command(async (parameter) => await _navigationService.NavigateAsync(nameof(DevSkillsPopup)));
+
+        public ICommand OpenLanguagesCommand => new Command(async (parameter) => await _navigationService.NavigateAsync(nameof(LanguagesPopup)));
 
         public ICommand SwitchThemeCommand => new Command((parameter) => _themeService.SwitchTheme());
 

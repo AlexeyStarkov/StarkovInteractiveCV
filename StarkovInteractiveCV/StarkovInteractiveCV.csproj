@@ -45,6 +45,7 @@
     <Folder Include="VisualElements\Pages\SocialNetworksPopup\" />
     <Folder Include="VisualElements\Pages\WorkflowExpiriencePopup\" />
     <Folder Include="VisualElements\Pages\DevSkillsPopup\" />
+    <Folder Include="VisualElements\Pages\LanguagesPopup\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Remove="Styles\LightTheme %28copy%29.xaml.cs" />
