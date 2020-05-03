@@ -6,7 +6,10 @@
                   xmlns:ffsvg="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
                   xmlns:devSkillsPopup="clr-namespace:StarkovInteractiveCV.VisualElements.Pages.DevSkillsPopup"
                   xmlns:customControls="clr-namespace:StarkovInteractiveCV.VisualElements.Controls"
+                  xmlns:uiModels="clr-namespace:StarkovInteractiveCV.VisualElements.Pages.DevSkillsPopup.UIModels"
+                  xmlns:skillsEnums="clr-namespace:StarkovInteractiveCV.VisualElements.Pages.DevSkillsPopup.Enums"
                   BackgroundColor="{DynamicResource PopupBackgroundColor}"
+                  HasSystemPadding="False"
                   x:DataType="devSkillsPopup:DevSkillsPopupViewModel"
                   x:Class="StarkovInteractiveCV.VisualElements.Pages.DevSkillsPopup.DevSkillsPopup">
     <rgPage:PopupPage.Animation>
@@ -22,34 +25,81 @@
             HasBackgroundAnimation="True"/>
     </rgPage:PopupPage.Animation>
 
-    <Grid Margin="30,30,30,0">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="70"/>
-        </Grid.RowDefinitions>
+    <rgPage:PopupPage.Resources>
+        <ResourceDictionary>
+            <Color x:Key="ProgrammingLangKnowledgeTypeColor">#FFB6C1</Color>
+            <Color x:Key="TechnologyKnowledgeTypeColor">#add8e6</Color>
+            <Color x:Key="DatabaseKnowledgeTypeColor">#b19cd9</Color>
+            <Color x:Key="ToolKnowledgeTypeColor">#fdad5c</Color>
+            <Color x:Key="IndustryKnowledgeTypeColor">#90ee90</Color>
+            <Color x:Key="OtherKnowledgeTypeColor">#7F6666</Color>
+            <DataTemplate x:DataType="uiModels:SkillUIModel" x:Key="SkillDataTemplate"> 
+                <Frame HeightRequest="30" CornerRadius="15" Padding="10,0" Margin="0,0,7,7" HorizontalOptions="Center" VerticalOptions="Center">
+                    <Frame.Triggers>
+                        <DataTrigger TargetType="Frame" Binding="{Binding SkillType}" Value="{x:Static skillsEnums:KnowledgeType.ProgrammingLanguage}">
+                            <Setter Property="BackgroundColor" Value="{StaticResource ProgrammingLangKnowledgeTypeColor}"/>
+                        </DataTrigger>
+                        <DataTrigger TargetType="Frame" Binding="{Binding SkillType}" Value="{x:Static skillsEnums:KnowledgeType.Technology}">
+                            <Setter Property="BackgroundColor" Value="{StaticResource TechnologyKnowledgeTypeColor}"/>
+                        </DataTrigger>
+                        <DataTrigger TargetType="Frame" Binding="{Binding SkillType}" Value="{x:Static skillsEnums:KnowledgeType.Database}">
+                            <Setter Property="BackgroundColor" Value="{StaticResource DatabaseKnowledgeTypeColor}"/>
+                        </DataTrigger>
+                        <DataTrigger TargetType="Frame" Binding="{Binding SkillType}" Value="{x:Static skillsEnums:KnowledgeType.Tool}">
+                            <Setter Property="BackgroundColor" Value="{StaticResource ToolKnowledgeTypeColor}"/>
+                        </DataTrigger>
+                        <DataTrigger TargetType="Frame" Binding="{Binding SkillType}" Value="{x:Static skillsEnums:KnowledgeType.Industry}">
+                            <Setter Property="BackgroundColor" Value="{StaticResource IndustryKnowledgeTypeColor}"/>
+                        </DataTrigger>
+                        <DataTrigger TargetType="Frame" Binding="{Binding SkillType}" Value="{x:Static skillsEnums:KnowledgeType.Other}">
+                            <Setter Property="BackgroundColor" Value="{StaticResource OtherKnowledgeTypeColor}"/>
+                        </DataTrigger>
+                    </Frame.Triggers>
+                    <Label VerticalOptions="Center" Text="{Binding Name}" FontSize="16" FontFamily="{DynamicResource SecondaryTextFont}" TextColor="{DynamicResource PrimaryTextColor}"/>
+                </Frame>
+            </DataTemplate>
+        </ResourceDictionary>
+    </rgPage:PopupPage.Resources>
 
-        <Frame CornerRadius="30" BackgroundColor="{DynamicResource SecondaryBacgroundColor}" HasShadow="True">
-            <Frame.GestureRecognizers>
+    <Frame Margin="0,50,0,0" Padding="0,0,0,15" TranslationY="15" CornerRadius="15" BackgroundColor="{DynamicResource SecondaryBacgroundColor}">
+        <Grid>
+            <Grid.GestureRecognizers>
                 <SwipeGestureRecognizer Command="{Binding CloseCommand}" Direction="Down"/>
-            </Frame.GestureRecognizers>
-            <Grid InputTransparent="True">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="70"/>
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="*"/>
-                </Grid.RowDefinitions>
+            </Grid.GestureRecognizers>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="75"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="75"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
 
-                <Label Grid.Row="0" Text="Dev Skills" FontSize="35" FontFamily="{DynamicResource PrimaryTextFont}" HorizontalOptions="Center" VerticalOptions="Center"/>
+            <ScrollView x:Name="ScrollContainer" Grid.Row="1" Grid.ColumnSpan="3" Padding="10,0">
+                <StackLayout>
+                    <Label Text="Industries" FontSize="22" TextColor="{DynamicResource PrimaryTextColor}" FontFamily="{DynamicResource AccentFont}" HorizontalOptions="Start"/>
+                    <FlexLayout BindableLayout.ItemsSource="{Binding Industries}" BindableLayout.ItemTemplate="{StaticResource SkillDataTemplate}" Margin="0,0,0,20"
+                                AlignContent="Start" AlignItems="Start" JustifyContent="Start" Wrap="Wrap"/>
 
+                    <Label Text="Skills" FontSize="22" TextColor="{DynamicResource PrimaryTextColor}" FontFamily="{DynamicResource AccentFont}" HorizontalOptions="Start"/>
+                    <FlexLayout BindableLayout.ItemsSource="{Binding Skills}" BindableLayout.ItemTemplate="{StaticResource SkillDataTemplate}" Margin="0,0,0,20"
+                                AlignContent="Start" AlignItems="Start" JustifyContent="Start" Wrap="Wrap"/>
+
+                    <Label Text="Tools" FontSize="22" TextColor="{DynamicResource PrimaryTextColor}" FontFamily="{DynamicResource AccentFont}" HorizontalOptions="Start"/>
+                    <FlexLayout BindableLayout.ItemsSource="{Binding Tools}" BindableLayout.ItemTemplate="{StaticResource SkillDataTemplate}" Margin="0,0,0,20"
+                                AlignContent="Start" AlignItems="Start" JustifyContent="Start" Wrap="Wrap"/>
+                </StackLayout>
+            </ScrollView>
+
+            <Grid Grid.Row="0" Grid.Column="0">
+                <Grid.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding CloseCommand}"/>
+                </Grid.GestureRecognizers>
+                <customControls:ContentButton Margin="15, 15, 0, 0" HorizontalOptions="Start" VerticalOptions="Start" Command="{Binding CloseCommand}" BackgroundColor="{DynamicResource AccentColor}" CornerRadius="12.5" HeightRequest="25" WidthRequest="25">
+                    <ffsvg:SvgCachedImage Source="{DynamicResource WhiteCloseXIcon}" HeightRequest="9" Aspect="AspectFit" VerticalOptions="Center" HorizontalOptions="Center"/>
+                </customControls:ContentButton>
             </Grid>
-        </Frame>
-
-        <Grid Grid.Row="1" HeightRequest="50" WidthRequest="50" HorizontalOptions="Center" VerticalOptions="Center">
-            <customControls:ContentButton Command="{Binding CloseCommand}" BackgroundColor="{DynamicResource AccentColor}" CornerRadius="25">
-                <ffsvg:SvgCachedImage Source="{DynamicResource WhiteCloseXIcon}" HeightRequest="15" Aspect="AspectFit" VerticalOptions="Center" HorizontalOptions="Center"/>
-            </customControls:ContentButton>
         </Grid>
-    </Grid>
+    </Frame>
 </rgPage:PopupPage>

@@ -23,7 +23,7 @@ namespace StarkovInteractiveCV.VisualElements.Pages.MainPage
             Photo.HeightRequest = PhotoMaxSize;
             NameGrid.HeightRequest = HeaderGridMinHeight;
 
-            _satellitesTranslations = Tools.GetStarTopsCoordinates(9, new Point(0, 0), 140, 2);
+            _satellitesTranslations = Tools.GetStarTopsCoordinates(8, new Point(0, 0), 140, 2);
 
             HobbiesButton.TranslationX = _satellitesTranslations[0].X;
             HobbiesButton.TranslationY = _satellitesTranslations[0].Y;
@@ -34,23 +34,20 @@ namespace StarkovInteractiveCV.VisualElements.Pages.MainPage
             DevSkilsButton.TranslationX = _satellitesTranslations[2].X;
             DevSkilsButton.TranslationY = _satellitesTranslations[2].Y;
 
-            ToolsButton.TranslationX = _satellitesTranslations[3].X;
-            ToolsButton.TranslationY = _satellitesTranslations[3].Y;
+            ProfileButton.TranslationX = _satellitesTranslations[3].X;
+            ProfileButton.TranslationY = _satellitesTranslations[3].Y;
 
-            ProfileButton.TranslationX = _satellitesTranslations[4].X;
-            ProfileButton.TranslationY = _satellitesTranslations[4].Y;
+            ContactButton.TranslationX = _satellitesTranslations[4].X;
+            ContactButton.TranslationY = _satellitesTranslations[4].Y;
 
-            ContactButton.TranslationX = _satellitesTranslations[5].X;
-            ContactButton.TranslationY = _satellitesTranslations[5].Y;
+            SocialButton.TranslationX = _satellitesTranslations[5].X;
+            SocialButton.TranslationY = _satellitesTranslations[5].Y;
 
-            SocialButton.TranslationX = _satellitesTranslations[6].X;
-            SocialButton.TranslationY = _satellitesTranslations[6].Y;
+            LanguagesButton.TranslationX = _satellitesTranslations[6].X;
+            LanguagesButton.TranslationY = _satellitesTranslations[6].Y;
 
-            LanguagesButton.TranslationX = _satellitesTranslations[7].X;
-            LanguagesButton.TranslationY = _satellitesTranslations[7].Y;
-
-            PersonalityButton.TranslationX = _satellitesTranslations[8].X;
-            PersonalityButton.TranslationY = _satellitesTranslations[8].Y;
+            PersonalityButton.TranslationX = _satellitesTranslations[7].X;
+            PersonalityButton.TranslationY = _satellitesTranslations[7].Y;
         }
 
         protected override void OnParentSet()
@@ -86,25 +83,22 @@ namespace StarkovInteractiveCV.VisualElements.Pages.MainPage
             WorkflowButton.TranslationY = _satellitesTranslations[1].Y * headerMovementProgressFactor;
             DevSkilsButton.TranslationX = _satellitesTranslations[2].X * headerMovementProgressFactor;
             DevSkilsButton.TranslationY = _satellitesTranslations[2].Y * headerMovementProgressFactor;
-            ToolsButton.TranslationX = _satellitesTranslations[3].X * headerMovementProgressFactor;
-            ToolsButton.TranslationY = _satellitesTranslations[3].Y * headerMovementProgressFactor;
-            ProfileButton.TranslationX = _satellitesTranslations[4].X * headerMovementProgressFactor;
-            ProfileButton.TranslationY = _satellitesTranslations[4].Y * headerMovementProgressFactor;
-            ContactButton.TranslationX = _satellitesTranslations[5].X * headerMovementProgressFactor;
-            ContactButton.TranslationY = _satellitesTranslations[5].Y * headerMovementProgressFactor;
-            SocialButton.TranslationX = _satellitesTranslations[6].X * headerMovementProgressFactor;
-            SocialButton.TranslationY = _satellitesTranslations[6].Y * headerMovementProgressFactor;
-            LanguagesButton.TranslationX = _satellitesTranslations[7].X * headerMovementProgressFactor;
-            LanguagesButton.TranslationY = _satellitesTranslations[7].Y * headerMovementProgressFactor;
-            PersonalityButton.TranslationX = _satellitesTranslations[8].X * headerMovementProgressFactor;
-            PersonalityButton.TranslationY = _satellitesTranslations[8].Y * headerMovementProgressFactor;
+            ProfileButton.TranslationX = _satellitesTranslations[3].X * headerMovementProgressFactor;
+            ProfileButton.TranslationY = _satellitesTranslations[3].Y * headerMovementProgressFactor;
+            ContactButton.TranslationX = _satellitesTranslations[4].X * headerMovementProgressFactor;
+            ContactButton.TranslationY = _satellitesTranslations[4].Y * headerMovementProgressFactor;
+            SocialButton.TranslationX = _satellitesTranslations[5].X * headerMovementProgressFactor;
+            SocialButton.TranslationY = _satellitesTranslations[5].Y * headerMovementProgressFactor;
+            LanguagesButton.TranslationX = _satellitesTranslations[6].X * headerMovementProgressFactor;
+            LanguagesButton.TranslationY = _satellitesTranslations[6].Y * headerMovementProgressFactor;
+            PersonalityButton.TranslationX = _satellitesTranslations[7].X * headerMovementProgressFactor;
+            PersonalityButton.TranslationY = _satellitesTranslations[7].Y * headerMovementProgressFactor;
 
             var satellitesOpacity = Math.Pow((HeaderFrame.HeightRequest - HeaderGridMinHeight) / (_headerGridHeightDefault - HeaderGridMinHeight), 7) * 1.2;
 
             HobbiesButton.Opacity = satellitesOpacity;
             WorkflowButton.Opacity = satellitesOpacity;
             DevSkilsButton.Opacity = satellitesOpacity;
-            ToolsButton.Opacity = satellitesOpacity;
             ProfileButton.Opacity = satellitesOpacity;
             ContactButton.Opacity = satellitesOpacity;
             SocialButton.Opacity = satellitesOpacity;

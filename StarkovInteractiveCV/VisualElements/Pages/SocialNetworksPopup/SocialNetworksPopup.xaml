@@ -6,7 +6,7 @@
                   xmlns:ffsvg="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
                   xmlns:sicialPopup="clr-namespace:StarkovInteractiveCV.VisualElements.Pages.SocialNetworksPopup"
                   xmlns:customControls="clr-namespace:StarkovInteractiveCV.VisualElements.Controls"
-                  BackgroundColor="{DynamicResource PopupBackgroundColor}"
+                  BackgroundColor="{DynamicResource PopupTransparentBackgroundColor}"
                   x:DataType="sicialPopup:SocialNetworksPopupViewModel"
                   x:Class="StarkovInteractiveCV.VisualElements.Pages.SocialNetworksPopup.SocialNetworksPopup">
     <rgPage:PopupPage.Animation>

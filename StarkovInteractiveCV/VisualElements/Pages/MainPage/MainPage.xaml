@@ -110,10 +110,6 @@
                     <ffimagesvg:SvgCachedImage Source="{DynamicResource SkillsIcon}" Style="{StaticResource SatelliteIconSvgStyle}"/>
                 </customControls:ContentButton>
 
-                <customControls:ContentButton x:Name="ToolsButton" Command="{Binding OpenProfileCommand}" Style="{StaticResource SatelliteButtonStyle}">
-                    <ffimagesvg:SvgCachedImage Source="{DynamicResource ToolsIcon}" Style="{StaticResource SatelliteIconSvgStyle}"/>
-                </customControls:ContentButton>
-                
                 <customControls:ContentButton x:Name="ContactButton" Command="{Binding OpenProfileCommand}" Style="{StaticResource SatelliteButtonStyle}">
                     <ffimagesvg:SvgCachedImage Source="{DynamicResource ContactIcon}" Style="{StaticResource SatelliteIconSvgStyle}"/>
                 </customControls:ContentButton>

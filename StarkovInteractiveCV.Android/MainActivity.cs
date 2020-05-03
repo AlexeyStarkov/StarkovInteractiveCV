@@ -8,6 +8,7 @@ using Android.Runtime;
 using Android.Views;
 using FFImageLoading.Forms.Platform;
 using FFImageLoading.Svg.Forms;
+using Plugin.CurrentActivity;
 using StarkovInteractiveCV.Enums;
 
 namespace StarkovInteractiveCV.Droid
@@ -32,6 +33,7 @@ namespace StarkovInteractiveCV.Droid
             ToolbarResource = Resource.Layout.Toolbar;
 
             Rg.Plugins.Popup.Popup.Init(this, savedInstanceState);
+            CrossCurrentActivity.Current.Init(this, savedInstanceState);
 
             base.OnCreate(savedInstanceState);
             SvgCachedImage.Init();

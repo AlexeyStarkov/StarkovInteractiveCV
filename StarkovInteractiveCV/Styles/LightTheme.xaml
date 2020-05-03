@@ -7,7 +7,8 @@
     <Color x:Key="SecondaryBacgroundColor">#E6E6E6</Color>
     <Color x:Key="TertiaryBacgroundColor">#E6E6E6</Color>
     <Color x:Key="AccentColor">#33A6CC</Color>
-    <Color x:Key="PopupBackgroundColor">#EA000000</Color>
+    <Color x:Key="PopupTransparentBackgroundColor">#EA000000</Color>
+    <Color x:Key="PopupBackgroundColor">#AA000000</Color>
 
     <Color x:Key="PrimaryTextColor">#000000</Color>
     <Color x:Key="SecondaryTextColor">#33A6CC</Color>

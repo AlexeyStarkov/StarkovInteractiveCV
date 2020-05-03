@@ -4,7 +4,7 @@
                   xmlns:rgPage="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
                   xmlns:rgAnimations="clr-namespace:Rg.Plugins.Popup.Animations;assembly=Rg.Plugins.Popup"
                   xmlns:languagesPopup="clr-namespace:StarkovInteractiveCV.VisualElements.Pages.LanguagesPopup"
-                  BackgroundColor="{DynamicResource PopupBackgroundColor}"
+                  BackgroundColor="{DynamicResource PopupTransparentBackgroundColor}"
                   x:DataType="languagesPopup:LanguagesPopupViewModel"
                   x:Class="StarkovInteractiveCV.VisualElements.Pages.LanguagesPopup.LanguagesPopup">
     <rgPage:PopupPage.Animation>
@@ -37,7 +37,7 @@
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
-                <Label Grid.Column="0" Text="Polish" FontSize="16" FontFamily="{DynamicResource AccentFont}" TextColor="White" HorizontalOptions="End" VerticalOptions="Center"/>
+                <Label Grid.Column="0" Text="Polish" FontSize="16" FontFamily="{DynamicResource AccentFont}" TextColor="{DynamicResource AccentColor}" HorizontalOptions="End" VerticalOptions="Center"/>
                 <Label Grid.Column="1" Text="B1-B2" FontSize="16" FontFamily="{DynamicResource AccentFont}" TextColor="White" HorizontalOptions="Start" VerticalOptions="Center"/>
             </Grid>
 
@@ -48,7 +48,7 @@
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
-                <Label Grid.Column="0" Text="English" FontSize="16" FontFamily="{DynamicResource AccentFont}" TextColor="White" HorizontalOptions="End" VerticalOptions="Center"/>
+                <Label Grid.Column="0" Text="English" FontSize="16" FontFamily="{DynamicResource AccentFont}" TextColor="{DynamicResource AccentColor}" HorizontalOptions="End" VerticalOptions="Center"/>
                 <Label Grid.Column="1" Text="B1-B2" FontSize="16" FontFamily="{DynamicResource AccentFont}" TextColor="White" HorizontalOptions="Start" VerticalOptions="Center"/>
             </Grid>
         
@@ -59,7 +59,7 @@
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
-                <Label Grid.Column="0" Text="Russian" FontSize="16" FontFamily="{DynamicResource AccentFont}" TextColor="White" HorizontalOptions="End" VerticalOptions="Center"/>
+                <Label Grid.Column="0" Text="Russian" FontSize="16" FontFamily="{DynamicResource AccentFont}" TextColor="{DynamicResource AccentColor}" HorizontalOptions="End" VerticalOptions="Center"/>
                 <Label Grid.Column="1" Text="Native" FontSize="16" FontFamily="{DynamicResource AccentFont}" TextColor="White" HorizontalOptions="Start" VerticalOptions="Center"/>
             </Grid>
         </StackLayout>

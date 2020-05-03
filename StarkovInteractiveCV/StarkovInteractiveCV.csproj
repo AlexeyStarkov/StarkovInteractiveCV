@@ -46,6 +46,8 @@
     <Folder Include="VisualElements\Pages\WorkflowExpiriencePopup\" />
     <Folder Include="VisualElements\Pages\DevSkillsPopup\" />
     <Folder Include="VisualElements\Pages\LanguagesPopup\" />
+    <Folder Include="VisualElements\Pages\DevSkillsPopup\UIModels\" />
+    <Folder Include="VisualElements\Pages\DevSkillsPopup\Enums\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Remove="Styles\LightTheme %28copy%29.xaml.cs" />
@@ -58,7 +60,6 @@
     <None Remove="Resources\SVG\DarkTheme\SkillsDark.svg" />
     <None Remove="Resources\SVG\DarkTheme\SocialDark.svg" />
     <None Remove="Resources\SVG\DarkTheme\StrengthDark.svg" />
-    <None Remove="Resources\SVG\DarkTheme\ToolsDark.svg" />
     <None Remove="Resources\SVG\DarkTheme\WorkflowDark.svg" />
     <None Remove="Resources\SVG\LightTheme\ContactLight.svg" />
     <None Remove="Resources\SVG\LightTheme\HobbiesLight.svg" />
@@ -67,7 +68,6 @@
     <None Remove="Resources\SVG\LightTheme\SkillsLight.svg" />
     <None Remove="Resources\SVG\LightTheme\SocialLight.svg" />
     <None Remove="Resources\SVG\LightTheme\StrengthLight.svg" />
-    <None Remove="Resources\SVG\LightTheme\ToolsLight.svg" />
     <None Remove="Resources\SVG\LightTheme\WorkflowLight.svg" />
     <None Remove="Resources\PNG\CirclePhoto.png" />
     <None Remove="Resources\SVG\DarkTheme\HamburgerMenuDark.svg" />
@@ -110,9 +110,6 @@
     <EmbeddedResource Include="Resources\SVG\DarkTheme\StrengthDark.svg">
       <LogicalName>StrengthDark.svg</LogicalName>
     </EmbeddedResource>
-    <EmbeddedResource Include="Resources\SVG\DarkTheme\ToolsDark.svg">
-      <LogicalName>ToolsDark.svg</LogicalName>
-    </EmbeddedResource>
     <EmbeddedResource Include="Resources\SVG\DarkTheme\WorkflowDark.svg">
       <LogicalName>WorkflowDark.svg</LogicalName>
     </EmbeddedResource>
@@ -136,9 +133,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Resources\SVG\LightTheme\StrengthLight.svg">
       <LogicalName>StrengthLight.svg</LogicalName>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\SVG\LightTheme\ToolsLight.svg">
-      <LogicalName>ToolsLight.svg</LogicalName>
     </EmbeddedResource>
     <EmbeddedResource Include="Resources\SVG\LightTheme\WorkflowLight.svg">
       <LogicalName>WorkflowLight.svg</LogicalName>
