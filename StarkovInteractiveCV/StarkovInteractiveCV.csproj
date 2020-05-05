@@ -48,6 +48,7 @@
     <Folder Include="VisualElements\Pages\LanguagesPopup\" />
     <Folder Include="VisualElements\Pages\DevSkillsPopup\UIModels\" />
     <Folder Include="VisualElements\Pages\DevSkillsPopup\Enums\" />
+    <Folder Include="VisualElements\Pages\ContactMePopup\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Remove="Styles\LightTheme %28copy%29.xaml.cs" />
@@ -87,6 +88,10 @@
     <None Remove="Resources\SVG\WhiteGithub.svg" />
     <None Remove="Resources\SVG\WhiteInstagram.svg" />
     <None Remove="Resources\SVG\WhiteLinkedin.svg" />
+    <None Remove="Resources\SVG\LightTheme\EmailLight.svg" />
+    <None Remove="Resources\SVG\DarkTheme\EmailDark.svg" />
+    <None Remove="Resources\SVG\LightTheme\CallLight.svg" />
+    <None Remove="Resources\SVG\DarkTheme\CallDark.svg" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Resources\SVG\DarkTheme\ContactDark.svg">
@@ -181,6 +186,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Resources\SVG\WhiteLinkedin.svg">
       <LogicalName>WhiteLinkedin.svg</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\SVG\LightTheme\EmailLight.svg">
+      <LogicalName>EmailLight.svg</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\SVG\DarkTheme\EmailDark.svg">
+      <LogicalName>EmailDark.svg</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\SVG\LightTheme\CallLight.svg">
+      <LogicalName>CallLight.svg</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\SVG\DarkTheme\CallDark.svg">
+      <LogicalName>CallDark.svg</LogicalName>
     </EmbeddedResource>
   </ItemGroup>
 </Project>

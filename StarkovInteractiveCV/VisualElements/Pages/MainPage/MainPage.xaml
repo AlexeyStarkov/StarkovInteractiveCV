@@ -110,7 +110,7 @@
                     <ffimagesvg:SvgCachedImage Source="{DynamicResource SkillsIcon}" Style="{StaticResource SatelliteIconSvgStyle}"/>
                 </customControls:ContentButton>
 
-                <customControls:ContentButton x:Name="ContactButton" Command="{Binding OpenProfileCommand}" Style="{StaticResource SatelliteButtonStyle}">
+                <customControls:ContentButton x:Name="ContactButton" Command="{Binding OpenContactMeCommand}" Style="{StaticResource SatelliteButtonStyle}">
                     <ffimagesvg:SvgCachedImage Source="{DynamicResource ContactIcon}" Style="{StaticResource SatelliteIconSvgStyle}"/>
                 </customControls:ContentButton>
                 

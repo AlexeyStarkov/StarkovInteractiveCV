@@ -4,19 +4,19 @@
                   xmlns:rgPage="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
                   xmlns:rgAnimations="clr-namespace:Rg.Plugins.Popup.Animations;assembly=Rg.Plugins.Popup"
                   xmlns:ffsvg="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
-                  xmlns:socialPopup="clr-namespace:StarkovInteractiveCV.VisualElements.Pages.SocialNetworksPopup"
+                  xmlns:contactMePopup="clr-namespace:StarkovInteractiveCV.VisualElements.Pages.ContactMePopup"
                   xmlns:customControls="clr-namespace:StarkovInteractiveCV.VisualElements.Controls"
                   BackgroundColor="{DynamicResource PopupTransparentBackgroundColor}"
-                  x:DataType="socialPopup:SocialNetworksPopupViewModel"
-                  x:Class="StarkovInteractiveCV.VisualElements.Pages.SocialNetworksPopup.SocialNetworksPopup">
+                  x:DataType="contactMePopup:ContactMePopupViewModel"
+                  x:Class="StarkovInteractiveCV.VisualElements.Pages.ContactMePopup.ContactMePopup">
     <rgPage:PopupPage.Animation>
         <rgAnimations:ScaleAnimation 
             PositionIn="Bottom"
-            PositionOut="Top"
+            PositionOut="Bottom"
             ScaleIn="1.2"
             ScaleOut="0.8"
-            DurationIn="300"
-            DurationOut="300"
+            DurationIn="200"
+            DurationOut="200"
             EasingIn="SinOut"
             EasingOut="SinIn"
             HasBackgroundAnimation="True"/>
@@ -41,19 +41,13 @@
             </Style>
         </ResourceDictionary>
     </rgPage:PopupPage.Resources>
-
-    <StackLayout Spacing="20" VerticalOptions="Center" HorizontalOptions="Center">
-        <customControls:ContentButton Command="{Binding OpenFacebookCommand}" Style="{StaticResource SocialMediaButtonStyle}">
-            <ffsvg:SvgCachedImage Source="{DynamicResource WhiteFacebookIcon}" Style="{StaticResource SocialMediaButtonIconStyle}"/>
+    
+    <StackLayout Spacing="30" VerticalOptions="End" HorizontalOptions="Center" Margin="0,0,0,50" Orientation="Horizontal">
+        <customControls:ContentButton Command="{Binding EmailMeCommand}" Style="{StaticResource SocialMediaButtonStyle}">
+            <ffsvg:SvgCachedImage Source="{DynamicResource EmailIcon}" Style="{StaticResource SocialMediaButtonIconStyle}"/>
         </customControls:ContentButton>
-        <customControls:ContentButton Command="{Binding OpenInstagramCommand}" Style="{StaticResource SocialMediaButtonStyle}">
-            <ffsvg:SvgCachedImage Source="{DynamicResource WhiteInstagramIcon}" Style="{StaticResource SocialMediaButtonIconStyle}"/>
-        </customControls:ContentButton>
-        <customControls:ContentButton Command="{Binding OpenGithubCommand}" Style="{StaticResource SocialMediaButtonStyle}">
-            <ffsvg:SvgCachedImage Source="{DynamicResource WhiteGithubIcon}" Style="{StaticResource SocialMediaButtonIconStyle}"/>
-        </customControls:ContentButton>
-        <customControls:ContentButton Command="{Binding OpenLinkedInCommand}" Style="{StaticResource SocialMediaButtonStyle}">
-            <ffsvg:SvgCachedImage Source="{DynamicResource WhiteLinkedinIcon}" Style="{StaticResource SocialMediaButtonIconStyle}"/>
+        <customControls:ContentButton Command="{Binding CallMeCommand}" Style="{StaticResource SocialMediaButtonStyle}">
+            <ffsvg:SvgCachedImage Source="{DynamicResource CallIcon}" Style="{StaticResource SocialMediaButtonIconStyle}"/>
         </customControls:ContentButton>
     </StackLayout>
 </rgPage:PopupPage>

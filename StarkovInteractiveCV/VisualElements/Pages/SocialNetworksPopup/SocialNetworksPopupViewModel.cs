@@ -47,10 +47,7 @@ namespace StarkovInteractiveCV.VisualElements.Pages.SocialNetworksPopup
                 await Launcher.OpenAsync(InstagramWebUrl);
         });
 
-        public ICommand OpenGithubCommand => new Command(async (parameter) =>
-        {
-            await Launcher.OpenAsync(GithubUrl);
-        });
+        public ICommand OpenGithubCommand => new Command(async (parameter) => await Launcher.OpenAsync(GithubUrl));
 
         public SocialNetworksPopupViewModel(INavigationService navigationService, IDialogService dialogService)
             : base(navigationService, dialogService)

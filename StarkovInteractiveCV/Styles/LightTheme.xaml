@@ -33,6 +33,8 @@
     <x:String x:Key="WorkflowIcon">resource://WorkflowLight.svg</x:String>
     <x:String x:Key="HamburgerMenuIcon">resource://HamburgerMenuLight.svg</x:String>
     <x:String x:Key="ThemeSwitchIcon">resource://ThemeSwitchLight.svg</x:String>
+    <x:String x:Key="EmailIcon">resource://EmailLight.svg</x:String>
+    <x:String x:Key="CallIcon">resource://CallLight.svg</x:String>
 
     <x:String x:Key="BlueDakarIcon">resource://BlueDakar.svg</x:String>    
     <x:String x:Key="BlueMarketingIcon">resource://BlueMarketing.svg</x:String>
