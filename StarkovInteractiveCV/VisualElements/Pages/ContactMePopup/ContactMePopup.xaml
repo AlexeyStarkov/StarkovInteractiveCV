@@ -1,15 +1,15 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<rgPage:PopupPage xmlns="http://xamarin.com/schemas/2014/forms"
-                  xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-                  xmlns:rgPage="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
-                  xmlns:rgAnimations="clr-namespace:Rg.Plugins.Popup.Animations;assembly=Rg.Plugins.Popup"
-                  xmlns:ffsvg="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
-                  xmlns:contactMePopup="clr-namespace:StarkovInteractiveCV.VisualElements.Pages.ContactMePopup"
-                  xmlns:customControls="clr-namespace:StarkovInteractiveCV.VisualElements.Controls"
-                  BackgroundColor="{DynamicResource PopupTransparentBackgroundColor}"
-                  x:DataType="contactMePopup:ContactMePopupViewModel"
-                  x:Class="StarkovInteractiveCV.VisualElements.Pages.ContactMePopup.ContactMePopup">
-    <rgPage:PopupPage.Animation>
+<baseObjects:PopupPageBase xmlns="http://xamarin.com/schemas/2014/forms"
+                           xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                           xmlns:baseObjects="clr-namespace:StarkovInteractiveCV.VisualElements.BaseObjects"
+                           xmlns:rgAnimations="clr-namespace:Rg.Plugins.Popup.Animations;assembly=Rg.Plugins.Popup"
+                           xmlns:ffsvg="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
+                           xmlns:contactMePopup="clr-namespace:StarkovInteractiveCV.VisualElements.Pages.ContactMePopup"
+                           xmlns:customControls="clr-namespace:StarkovInteractiveCV.VisualElements.Controls"
+                           BackgroundColor="{DynamicResource PopupTransparentBackgroundColor}"
+                           x:DataType="contactMePopup:ContactMePopupViewModel"
+                           x:Class="StarkovInteractiveCV.VisualElements.Pages.ContactMePopup.ContactMePopup">
+    <baseObjects:PopupPageBase.Animation>
         <rgAnimations:ScaleAnimation 
             PositionIn="Bottom"
             PositionOut="Bottom"
@@ -20,9 +20,9 @@
             EasingIn="SinOut"
             EasingOut="SinIn"
             HasBackgroundAnimation="True"/>
-    </rgPage:PopupPage.Animation>
+    </baseObjects:PopupPageBase.Animation>
 
-    <rgPage:PopupPage.Resources>
+    <baseObjects:PopupPageBase.Resources>
         <ResourceDictionary>
             <Style TargetType="customControls:ContentButton" x:Key="SocialMediaButtonStyle">
                 <Setter Property="BackgroundColor" Value="{DynamicResource AccentColor}"/>
@@ -40,7 +40,7 @@
                 <Setter Property="HorizontalOptions" Value="Center"/>
             </Style>
         </ResourceDictionary>
-    </rgPage:PopupPage.Resources>
+    </baseObjects:PopupPageBase.Resources>
     
     <StackLayout Spacing="30" VerticalOptions="End" HorizontalOptions="Center" Margin="0,0,0,50" Orientation="Horizontal">
         <customControls:ContentButton Command="{Binding EmailMeCommand}" Style="{StaticResource SocialMediaButtonStyle}">
@@ -50,4 +50,4 @@
             <ffsvg:SvgCachedImage Source="{DynamicResource CallIcon}" Style="{StaticResource SocialMediaButtonIconStyle}"/>
         </customControls:ContentButton>
     </StackLayout>
-</rgPage:PopupPage>
+</baseObjects:PopupPageBase>

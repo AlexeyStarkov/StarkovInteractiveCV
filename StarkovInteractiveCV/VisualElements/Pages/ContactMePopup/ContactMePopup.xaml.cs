@@ -1,8 +1,8 @@
-﻿using Rg.Plugins.Popup.Pages;
+﻿using StarkovInteractiveCV.VisualElements.BaseObjects;
 
 namespace StarkovInteractiveCV.VisualElements.Pages.ContactMePopup
 {
-    public partial class ContactMePopup : PopupPage
+    public partial class ContactMePopup : PopupPageBase
     {
         public ContactMePopup()
         {

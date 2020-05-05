@@ -1,11 +1,9 @@
 ﻿using System.Collections.Generic;
-using System.Windows.Input;
 using Prism.Navigation;
 using Prism.Services.Dialogs;
 using StarkovInteractiveCV.VisualElements.BaseObjects;
 using StarkovInteractiveCV.VisualElements.Pages.DevSkillsPopup.Enums;
 using StarkovInteractiveCV.VisualElements.Pages.DevSkillsPopup.UIModels;
-using Xamarin.Forms;
 
 namespace StarkovInteractiveCV.VisualElements.Pages.DevSkillsPopup
 {
@@ -31,8 +29,6 @@ namespace StarkovInteractiveCV.VisualElements.Pages.DevSkillsPopup
             get => _idustries;
             set => SetProperty(ref _idustries, value);
         }
-
-        public ICommand CloseCommand => new Command(async (parameter) => await _navigationService.GoBackAsync());
 
         public DevSkillsPopupViewModel(INavigationService navigationService, IDialogService dialogService)
             : base(navigationService, dialogService)

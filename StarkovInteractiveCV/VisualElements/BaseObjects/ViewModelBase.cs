@@ -1,6 +1,8 @@
-﻿using Prism.Mvvm;
+﻿using System.Windows.Input;
+using Prism.Mvvm;
 using Prism.Navigation;
 using Prism.Services.Dialogs;
+using Xamarin.Forms;
 
 namespace StarkovInteractiveCV.VisualElements.BaseObjects
 {
@@ -8,6 +10,8 @@ namespace StarkovInteractiveCV.VisualElements.BaseObjects
     {
         protected readonly INavigationService _navigationService;
         protected readonly IDialogService _dialogService;
+
+        public virtual ICommand GoBackCommand => new Command(async (parameter) => await _navigationService.GoBackAsync());
 
         public ViewModelBase(INavigationService navigationService, IDialogService dialogService)
         {

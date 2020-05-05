@@ -1,8 +1,8 @@
-﻿using Rg.Plugins.Popup.Pages;
+﻿using StarkovInteractiveCV.VisualElements.BaseObjects;
 
 namespace StarkovInteractiveCV.VisualElements.Pages.WorkflowExpiriencePopup
 {
-    public partial class WorkflowExpiriencePopup : PopupPage
+    public partial class WorkflowExpiriencePopup : PopupPageBase
     {
         public WorkflowExpiriencePopup()
         {

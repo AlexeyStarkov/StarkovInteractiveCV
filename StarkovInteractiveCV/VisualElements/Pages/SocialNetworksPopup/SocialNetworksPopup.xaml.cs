@@ -1,20 +1,12 @@
-﻿using Rg.Plugins.Popup.Pages;
+﻿using StarkovInteractiveCV.VisualElements.BaseObjects;
 
 namespace StarkovInteractiveCV.VisualElements.Pages.SocialNetworksPopup
 {
-    public partial class SocialNetworksPopup : PopupPage
+    public partial class SocialNetworksPopup : PopupPageBase
     {
         public SocialNetworksPopup()
         {
-            try
-            {
-                InitializeComponent();
-            }
-            catch (System.Exception ex)
-            {
-
-            }
-            
+            InitializeComponent();
         }
     }
 }

@@ -1,8 +1,8 @@
-﻿using Rg.Plugins.Popup.Pages;
+﻿using StarkovInteractiveCV.VisualElements.BaseObjects;
 
 namespace StarkovInteractiveCV.VisualElements.Pages.HobbiesPopup
 {
-    public partial class HobbiesPopup : PopupPage
+    public partial class HobbiesPopup : PopupPageBase
     {
         public HobbiesPopup()
         {

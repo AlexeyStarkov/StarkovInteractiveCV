@@ -49,6 +49,7 @@
     <Folder Include="VisualElements\Pages\DevSkillsPopup\UIModels\" />
     <Folder Include="VisualElements\Pages\DevSkillsPopup\Enums\" />
     <Folder Include="VisualElements\Pages\ContactMePopup\" />
+    <Folder Include="VisualElements\Pages\ProfilePopup\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Remove="Styles\LightTheme %28copy%29.xaml.cs" />
