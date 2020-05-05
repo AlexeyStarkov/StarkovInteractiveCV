@@ -93,6 +93,10 @@
     <None Remove="Resources\SVG\DarkTheme\EmailDark.svg" />
     <None Remove="Resources\SVG\LightTheme\CallLight.svg" />
     <None Remove="Resources\SVG\DarkTheme\CallDark.svg" />
+    <None Remove="Resources\SVG\CallLight.svg" />
+    <None Remove="Resources\SVG\EmailLight.svg" />
+    <None Remove="Resources\SVG\WhiteCall.svg" />
+    <None Remove="Resources\SVG\WhiteEmail.svg" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Resources\SVG\DarkTheme\ContactDark.svg">
@@ -188,17 +192,11 @@
     <EmbeddedResource Include="Resources\SVG\WhiteLinkedin.svg">
       <LogicalName>WhiteLinkedin.svg</LogicalName>
     </EmbeddedResource>
-    <EmbeddedResource Include="Resources\SVG\LightTheme\EmailLight.svg">
-      <LogicalName>EmailLight.svg</LogicalName>
+    <EmbeddedResource Include="Resources\SVG\WhiteCall.svg">
+      <LogicalName>WhiteCall.svg</LogicalName>
     </EmbeddedResource>
-    <EmbeddedResource Include="Resources\SVG\DarkTheme\EmailDark.svg">
-      <LogicalName>EmailDark.svg</LogicalName>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\SVG\LightTheme\CallLight.svg">
-      <LogicalName>CallLight.svg</LogicalName>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\SVG\DarkTheme\CallDark.svg">
-      <LogicalName>CallDark.svg</LogicalName>
+    <EmbeddedResource Include="Resources\SVG\WhiteEmail.svg">
+      <LogicalName>WhiteEmail.svg</LogicalName>
     </EmbeddedResource>
   </ItemGroup>
 </Project>
