@@ -25,7 +25,6 @@
   <ItemGroup>
     <Folder Include="VisualElements\" />
     <Folder Include="VisualElements\Pages\" />
-    <Folder Include="VisualElements\Views\" />
     <Folder Include="VisualElements\Controls\" />
     <Folder Include="UIModels\" />
     <Folder Include="NavigationModels\" />
@@ -51,9 +50,11 @@
     <Folder Include="VisualElements\Pages\ContactMePopup\" />
     <Folder Include="VisualElements\Pages\ProfilePopup\" />
     <Folder Include="VisualElements\Pages\PersonalityPopup\" />
+    <Folder Include="VisualElements\Pages\WorkDetailsPage\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Remove="Styles\LightTheme %28copy%29.xaml.cs" />
+    <Compile Remove="Tools\Constants.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Remove="Resources\SVG\DarkTheme\ContactDark.svg" />
@@ -199,5 +200,10 @@
     <EmbeddedResource Include="Resources\SVG\WhiteEmail.svg">
       <LogicalName>WhiteEmail.svg</LogicalName>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="VisualElements\Pages\WorkDetailsPage\WorkDetailsPage.xaml.cs">
+      <DependentUpon>WorkDetailsPage.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
 </Project>

@@ -12,6 +12,7 @@ using StarkovInteractiveCV.VisualElements.Pages.MainPage;
 using StarkovInteractiveCV.VisualElements.Pages.PersonalityPopup;
 using StarkovInteractiveCV.VisualElements.Pages.ProfilePopup;
 using StarkovInteractiveCV.VisualElements.Pages.SocialNetworksPopup;
+using StarkovInteractiveCV.VisualElements.Pages.WorkDetailsPage;
 using StarkovInteractiveCV.VisualElements.Pages.WorkflowExpiriencePopup;
 using Xamarin.Forms;
 
@@ -49,6 +50,7 @@ namespace StarkovInteractiveCV
             containerRegistry.RegisterForNavigation<ContactMePopup, ContactMePopupViewModel>();
             containerRegistry.RegisterForNavigation<ProfilePopup, ProfilePopupViewModel>();
             containerRegistry.RegisterForNavigation<PersonalityPopup, PersonalityPopupViewModel>();
+            containerRegistry.RegisterForNavigation<WorkDetailsPage, WorkDetailsViewModel>();
 
             containerRegistry.RegisterSingleton<ISettingsService, SettingsService>();
             containerRegistry.RegisterSingleton<IThemeService, ThemeService>();

@@ -56,13 +56,16 @@
         </ResourceDictionary>
     </ContentPage.Resources>
 
-    <Grid BackgroundColor="{DynamicResource TertiaryBacgroundColor}">
+    <Grid x:Name="rootGrid" BackgroundColor="{DynamicResource TertiaryBacgroundColor}">
         <ScrollView x:Name="Scroll" VerticalScrollBarVisibility="Never">
             <StackLayout x:Name="ScrollableStack" BindableLayout.ItemsSource="{Binding WorkExpirienceCollection}">
                 <BindableLayout.ItemTemplate>
                     <DataTemplate x:DataType="uiModels:WorkExpirienceModel">
                         <Frame Margin="10" CornerRadius="20" Padding="10" HasShadow="True" BackgroundColor="{DynamicResource SecondaryBacgroundColor}" HeightRequest="120">
-                            <Grid>
+                            <Frame.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding BindingContext.OpenWorkDetailsCommand, Source={x:Reference rootGrid}}" CommandParameter="{Binding .}"/>
+                            </Frame.GestureRecognizers>
+                            <Grid InputTransparent="True">
                                 <Grid.RowDefinitions>
                                     <RowDefinition Height="*"/>
                                     <RowDefinition Height="*"/>
