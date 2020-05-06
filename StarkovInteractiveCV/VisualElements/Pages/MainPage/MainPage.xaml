@@ -122,7 +122,7 @@
                     <ffimagesvg:SvgCachedImage Source="{DynamicResource LanguagesIcon}" Style="{StaticResource SatelliteIconSvgStyle}"/>
                 </customControls:ContentButton>
                 
-                <customControls:ContentButton x:Name="PersonalityButton" Command="{Binding OpenProfileCommand}" Style="{StaticResource SatelliteButtonStyle}">
+                <customControls:ContentButton x:Name="PersonalityButton" Command="{Binding OpenStrengthCommand}" Style="{StaticResource SatelliteButtonStyle}">
                     <ffimagesvg:SvgCachedImage Source="{DynamicResource StrengthIcon}" Style="{StaticResource SatelliteIconSvgStyle}"/>
                 </customControls:ContentButton>
                 

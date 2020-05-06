@@ -35,6 +35,8 @@ namespace StarkovInteractiveCV.VisualElements.Pages.MainPage
 
         public ICommand OpenContactMeCommand => new Command(async (parameter) => await _navigationService.NavigateAsync(nameof(ContactMePopup)));
 
+        public ICommand OpenStrengthCommand => new Command(async (parameter) => await _navigationService.NavigateAsync(nameof(PersonalityPopup)));
+
         public ICommand SwitchThemeCommand => new Command((parameter) => _themeService.SwitchTheme());
 
         public MainPageViewModel(INavigationService navigationService, IDialogService dialogService, IThemeService themeService)
