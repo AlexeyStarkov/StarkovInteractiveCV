@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<baseObjects:PopupPageBase xmlns="http://xamarin.com/schemas/2014/forms"
+                           xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                           xmlns:baseObjects="clr-namespace:StarkovInteractiveCV.VisualElements.BaseObjects"
+                           xmlns:rgAnimations="clr-namespace:Rg.Plugins.Popup.Animations;assembly=Rg.Plugins.Popup"
+                           xmlns:ffsvg="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
+                           xmlns:profilePopup="clr-namespace:StarkovInteractiveCV.VisualElements.Pages.ProfilePopup"
+                           xmlns:customControls="clr-namespace:StarkovInteractiveCV.VisualElements.Controls"
+                           xmlns:uiModels="clr-namespace:StarkovInteractiveCV.VisualElements.Pages.DevSkillsPopup.UIModels"
+                           xmlns:skillsEnums="clr-namespace:StarkovInteractiveCV.VisualElements.Pages.DevSkillsPopup.Enums"
+                           BackgroundColor="{DynamicResource PopupBackgroundColor}"
+                           HasSystemPadding="False"
+                           x:DataType="profilePopup:ProfilePopupViewModel"
+                           x:Class="StarkovInteractiveCV.VisualElements.Pages.ProfilePopup.ProfilePopup">
+    <baseObjects:PopupPageBase.Animation>
+        <rgAnimations:ScaleAnimation 
+            PositionIn="Bottom"
+            PositionOut="Bottom"
+            ScaleIn="1.2"
+            ScaleOut="0.8"
+            DurationIn="300"
+            DurationOut="300"
+            EasingIn="SinOut"
+            EasingOut="SinIn"
+            HasBackgroundAnimation="True"/>
+    </baseObjects:PopupPageBase.Animation>
+
+    <Frame Margin="0,50,0,0" Padding="0,0,0,15" TranslationY="15" CornerRadius="15" BackgroundColor="{DynamicResource SecondaryBacgroundColor}">
+        <Grid>
+            <Grid.GestureRecognizers>
+                <SwipeGestureRecognizer Command="{Binding GoBackCommand}" Direction="Down"/>
+            </Grid.GestureRecognizers>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="75"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="75"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <ScrollView x:Name="ScrollContainer" Grid.Row="1" Grid.ColumnSpan="3" Padding="10,0">
+                <Label Text="{Binding Text}" FontSize="18" LineBreakMode="WordWrap" FontFamily="{DynamicResource SecondaryFont}" TextColor="{DynamicResource PrimaryTextColor}"/>
+            </ScrollView>
+
+            <Grid Grid.Row="0" Grid.Column="0">
+                <Grid.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding GoBackCommand}"/>
+                </Grid.GestureRecognizers>
+                <customControls:ContentButton Margin="15, 15, 0, 0" HorizontalOptions="Start" VerticalOptions="Start" Command="{Binding GoBackCommand}" BackgroundColor="{DynamicResource AccentColor}" CornerRadius="12.5" HeightRequest="25" WidthRequest="25">
+                    <ffsvg:SvgCachedImage Source="{DynamicResource WhiteCloseXIcon}" HeightRequest="9" Aspect="AspectFit" VerticalOptions="Center" HorizontalOptions="Center"/>
+                </customControls:ContentButton>
+            </Grid>
+        </Grid>
+    </Frame>
+</baseObjects:PopupPageBase>

@@ -21,10 +21,7 @@ namespace StarkovInteractiveCV.VisualElements.Pages.MainPage
             set => SetProperty(ref _workExpirienceCollection, value);
         }
 
-        public ICommand OpenProfileCommand => new Command(async (parameter) =>
-        {
-            
-        });
+        public ICommand OpenProfileCommand => new Command(async (parameter) => await _navigationService.NavigateAsync(nameof(ProfilePopup)));
 
         public ICommand OpenSocialNetworksCommand => new Command(async (parameter) => await _navigationService.NavigateAsync(nameof(SocialNetworksPopup)));
 
