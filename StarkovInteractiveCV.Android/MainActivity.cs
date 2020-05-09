@@ -11,7 +11,7 @@ using StarkovInteractiveCV.Enums;
 
 namespace StarkovInteractiveCV.Droid
 {
-    [Activity(Label = "StarkovInteractiveCV", Icon = "@mipmap/icon", Theme = "@style/MainLightTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
+    [Activity(Theme = "@style/MainLightTheme", ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
     public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
     {
         internal static MainActivity Instance { get; private set; }
