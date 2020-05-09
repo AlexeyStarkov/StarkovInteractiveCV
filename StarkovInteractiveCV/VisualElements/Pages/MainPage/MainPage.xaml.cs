@@ -75,7 +75,7 @@ namespace StarkovInteractiveCV.VisualElements.Pages.MainPage
             else
                 HeaderFrame.HeightRequest = _headerGridHeightDefault - e.ScrollY;
 
-            var headerMovementProgressFactor = Math.Pow((HeaderFrame.HeightRequest - HeaderGridMinHeight) / (_headerGridHeightDefault - HeaderGridMinHeight), 4);
+            var headerMovementProgressFactor = Math.Pow((HeaderFrame.HeightRequest - HeaderGridMinHeight) / (_headerGridHeightDefault - HeaderGridMinHeight), 3);
 
             HobbiesButton.TranslationX = _satellitesTranslations[0].X * headerMovementProgressFactor;
             HobbiesButton.TranslationY = _satellitesTranslations[0].Y * headerMovementProgressFactor;
