@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using Prism.Navigation;
 using Prism.Services.Dialogs;
 using StarkovInteractiveCV.VisualElements.BaseObjects;
@@ -61,7 +62,7 @@ namespace StarkovInteractiveCV.VisualElements.Pages.DevSkillsPopup
                 new SkillUIModel(KnowledgeType.Database, "MS SQL"),
                 new SkillUIModel(KnowledgeType.Database, "MySQL"),
                 new SkillUIModel(KnowledgeType.Database, "Code First"),
-                new SkillUIModel(KnowledgeType.Database, "Database First"),
+                new SkillUIModel(KnowledgeType.Database, "DB First"),
                 new SkillUIModel(KnowledgeType.Other, "XAML"),
                 new SkillUIModel(KnowledgeType.Other, "JSON"),
                 new SkillUIModel(KnowledgeType.Other, "SCADA"),
@@ -69,6 +70,7 @@ namespace StarkovInteractiveCV.VisualElements.Pages.DevSkillsPopup
                 new SkillUIModel(KnowledgeType.Other, "Binary protocols"),
                 new SkillUIModel(KnowledgeType.Other, "Payment providers")
             };
+            Skills = Skills.OrderBy(x => x.SkillType).ThenBy(x => x.Name.Length);
 
             Tools = new List<SkillUIModel>()
             {
