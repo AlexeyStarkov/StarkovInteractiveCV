@@ -33,14 +33,15 @@ namespace StarkovInteractiveCV
                 var themeService = Container.Resolve<IThemeService>();
                 themeService.SetThemeResources(themeService.CurrentTheme);
             }
-
-            await NavigationService.NavigateAsync(nameof(MainPage));
+            
+            await NavigationService.NavigateAsync($"NavigationPage/{nameof(MainPage)}");
         }
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
             containerRegistry.RegisterPopupNavigationService();
 
+            containerRegistry.RegisterForNavigation<NavigationPage>();
             containerRegistry.RegisterForNavigation<MainPage, MainPageViewModel>();
             containerRegistry.RegisterForNavigation<HobbiesPopup, HobbiesPopupViewModel>();
             containerRegistry.RegisterForNavigation<SocialNetworksPopup, SocialNetworksPopupViewModel>();
@@ -50,7 +51,7 @@ namespace StarkovInteractiveCV
             containerRegistry.RegisterForNavigation<ContactMePopup, ContactMePopupViewModel>();
             containerRegistry.RegisterForNavigation<ProfilePopup, ProfilePopupViewModel>();
             containerRegistry.RegisterForNavigation<PersonalityPopup, PersonalityPopupViewModel>();
-            containerRegistry.RegisterForNavigation<WorkDetailsPage, WorkDetailsViewModel>();
+            containerRegistry.RegisterForNavigation<WorkDetailsPage, WorkDetailsPageViewModel>();
 
             containerRegistry.RegisterSingleton<ISettingsService, SettingsService>();
             containerRegistry.RegisterSingleton<IThemeService, ThemeService>();

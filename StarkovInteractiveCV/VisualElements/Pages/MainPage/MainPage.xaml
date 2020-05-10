@@ -5,9 +5,10 @@
              xmlns:mainPage="clr-namespace:StarkovInteractiveCV.VisualElements.Pages.MainPage"
              xmlns:ffimage="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
              xmlns:ffimagesvg="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
-             xmlns:uiModels="clr-namespace:StarkovInteractiveCV.UIModels"
+             xmlns:uiModels="clr-namespace:StarkovInteractiveCV.VisualElements.Pages.MainPage.UIModels"
              xmlns:customControls="clr-namespace:StarkovInteractiveCV.VisualElements.Controls"
              x:DataType="mainPage:MainPageViewModel"
+             NavigationPage.HasNavigationBar="False"
              x:Class="StarkovInteractiveCV.VisualElements.Pages.MainPage.MainPage">
     <ContentPage.Resources>
         <ResourceDictionary>
@@ -44,7 +45,6 @@
                 <Setter Property="InputTransparent" Value="True"/>
             </Style>
 
-
             <Style TargetType="Label" x:Key="LabelBaseStyle">
                 <Setter Property="TextColor" Value="{DynamicResource PrimaryTextColor}"/>
                 <Setter Property="FontFamily" Value="{DynamicResource PrimaryFont}"/>
@@ -60,16 +60,16 @@
         <ScrollView x:Name="Scroll" VerticalScrollBarVisibility="Never">
             <StackLayout x:Name="ScrollableStack" BindableLayout.ItemsSource="{Binding WorkExpirienceCollection}">
                 <BindableLayout.ItemTemplate>
-                    <DataTemplate x:DataType="uiModels:WorkExpirienceModel">
-                        <Frame Margin="10" CornerRadius="20" Padding="10" HasShadow="True" BackgroundColor="{DynamicResource SecondaryBacgroundColor}" HeightRequest="120">
+                    <DataTemplate x:DataType="uiModels:WorkExpirienceUIModel">
+                        <Frame Margin="10" CornerRadius="20" Padding="10" HasShadow="True" BackgroundColor="{DynamicResource SecondaryBacgroundColor}" HeightRequest="{Binding TileHeight}">
                             <Frame.GestureRecognizers>
                                 <TapGestureRecognizer Command="{Binding BindingContext.OpenWorkDetailsCommand, Source={x:Reference rootGrid}}" CommandParameter="{Binding .}"/>
                             </Frame.GestureRecognizers>
                             <Grid InputTransparent="True">
                                 <Grid.RowDefinitions>
+                                    <RowDefinition Height="{Binding TileHeaderHeight}"/>
                                     <RowDefinition Height="*"/>
-                                    <RowDefinition Height="*"/>
-                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="{Binding TileBasementHeight}"/>
                                 </Grid.RowDefinitions>
 
                                 <Label Grid.Row="0" HorizontalOptions="Start" VerticalOptions="Center" Style="{StaticResource LabelBaseStyle}">
@@ -77,20 +77,21 @@
                                         <FormattedString>
                                             <Span Text="{Binding CompanyName}" TextColor="{DynamicResource SecondaryTextColor}" FontSize="16"/>
                                             <Span Text="{x:Static system:Environment.NewLine}"/>
-                                            <Span Text="{Binding WorkPeriodString}"/>
+                                            <Span Text="{Binding WorkPeriod}"/>
                                         </FormattedString>
                                     </Label.FormattedText>
                                 </Label>
 
-                                <Label Grid.Row="1" HorizontalOptions="Start" VerticalOptions="Center" Style="{StaticResource LabelBaseStyle}">
-                                    <Label.FormattedText>
-                                        <FormattedString>
-                                            <Span Text="Role: " FontFamily="{DynamicResource PrimaryFont}" FontSize="16"/>
-                                            <Span Text="{Binding PositionName}" FontFamily="{DynamicResource SecondaryFont}" FontSize="16"/>
-                                        </FormattedString>
-                                    </Label.FormattedText>
-                                </Label>
-
+                                <CollectionView Grid.Row="1" VerticalOptions="Center" ItemsSource="{Binding Roles}">
+                                    <CollectionView.Header>
+                                        <Label Text="Roles:" FontSize="16" HorizontalOptions="Start" VerticalOptions="Center" Style="{StaticResource LabelBaseStyle}"/>
+                                    </CollectionView.Header>
+                                    <CollectionView.ItemTemplate>
+                                        <DataTemplate x:DataType="x:String">
+                                            <Label Text="{Binding ., StringFormat='- {0}'}" TextColor="{DynamicResource PrimaryTextColor}" FontFamily="{DynamicResource SecondaryFont}" FontSize="16" HorizontalOptions="Start"/>
+                                        </DataTemplate>
+                                    </CollectionView.ItemTemplate>
+                                </CollectionView>
                                 <Label Grid.Row="2" Text="{Binding WorkPlaceName}" Style="{StaticResource LabelBaseStyle}" FontFamily="{DynamicResource SecondaryFont}" FontSize="16" VerticalOptions="Center" HorizontalOptions="Start"/>
                             </Grid>
                         </Frame>

@@ -21,13 +21,13 @@
     <PackageReference Include="Xamarin.FFImageLoading.Transformations" Version="2.4.11.982" />
     <PackageReference Include="NodaTime" Version="2.4.8" />
     <PackageReference Include="Prism.Plugin.Popups" Version="7.2.0.1046" />
+    <PackageReference Include="Forms9Patch" Version="2.2.6" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="VisualElements\" />
     <Folder Include="VisualElements\Pages\" />
     <Folder Include="VisualElements\Controls\" />
-    <Folder Include="UIModels\" />
-    <Folder Include="NavigationModels\" />
+    <Folder Include="Models\" />
     <Folder Include="VisualElements\Pages\MainPage\" />
     <Folder Include="VisualElements\BaseObjects\" />
     <Folder Include="Styles\" />
@@ -51,6 +51,7 @@
     <Folder Include="VisualElements\Pages\ProfilePopup\" />
     <Folder Include="VisualElements\Pages\PersonalityPopup\" />
     <Folder Include="VisualElements\Pages\WorkDetailsPage\" />
+    <Folder Include="VisualElements\Pages\MainPage\UIModels\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Remove="Styles\LightTheme %28copy%29.xaml.cs" />
@@ -99,6 +100,7 @@
     <None Remove="Resources\SVG\EmailLight.svg" />
     <None Remove="Resources\SVG\WhiteCall.svg" />
     <None Remove="Resources\SVG\WhiteEmail.svg" />
+    <None Remove="Resources\SVG\BlueLeftArrow.svg" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Resources\SVG\DarkTheme\ContactDark.svg">
@@ -199,6 +201,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Resources\SVG\WhiteEmail.svg">
       <LogicalName>WhiteEmail.svg</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\SVG\BlueLeftArrow.svg">
+      <LogicalName>BlueLeftArrow.svg</LogicalName>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

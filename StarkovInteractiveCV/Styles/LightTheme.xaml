@@ -46,6 +46,7 @@
     <x:String x:Key="WhiteGithubIcon">resource://WhiteGithub.svg</x:String>
     <x:String x:Key="WhiteInstagramIcon">resource://WhiteInstagram.svg</x:String>
     <x:String x:Key="WhiteLinkedinIcon">resource://WhiteLinkedin.svg</x:String>
+    <x:String x:Key="BlueLeftArrowIcon">resource://BlueLeftArrow.svg</x:String>
 
     <!--PNG-->
     <x:String x:Key="CirclePhoto">resource://CirclePhoto.png</x:String>

@@ -1,8 +1,60 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:workDetailsPage="clr-namespace:StarkovInteractiveCV.VisualElements.Pages.WorkDetailsPage"
-             x:DataType="workDetailsPage:WorkDetailsPageViewModel"
+             xmlns:ffsvg="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
+             xmlns:controls="clr-namespace:StarkovInteractiveCV.VisualElements.Controls"
+             xmlns:f9p="clr-namespace:Forms9Patch;assembly=Forms9Patch"
+             NavigationPage.HasNavigationBar="False"
              x:Class="StarkovInteractiveCV.VisualElements.Pages.WorkDetailsPage.WorkDetailsPage">
-    
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <DataTemplate x:DataType="x:String" x:Key="CollectionItemTemplate">
+                <Label Margin="10,0,0,0" Text="{Binding ., StringFormat='- {0}'}" FontSize="16" FontFamily="{DynamicResource SecondaryFont}" TextColor="{DynamicResource PrimaryTextColor}" HorizontalOptions="Start"/>
+            </DataTemplate>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <Grid Padding="10,0" BackgroundColor="{DynamicResource PrimaryBackgroundColor}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="70"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <StackLayout Grid.Row="1">
+            <Label Text="{Binding SubHeader}" FontSize="18" HorizontalOptions="Start" FontFamily="{DynamicResource AccentFont}" TextColor="{DynamicResource AccentColor}"/>
+
+            <ScrollView VerticalScrollBarVisibility="Never">
+                <StackLayout Margin="0,15,0,0">
+                    <Label Text="Achivements:" TextDecorations="Underline" FontSize="20" FontFamily="{DynamicResource PrimaryFont}" TextColor="{DynamicResource PrimaryTextColor}" HorizontalOptions="Start"/>
+                    <StackLayout BindableLayout.ItemsSource="{Binding Achivements}" BindableLayout.ItemTemplate="{StaticResource CollectionItemTemplate}"/>
+                    <Label Margin="0,15,0,0" Text="Roles:" TextDecorations="Underline" FontSize="20" FontFamily="{DynamicResource PrimaryFont}" TextColor="{DynamicResource PrimaryTextColor}" HorizontalOptions="Start"/>
+                    <StackLayout BindableLayout.ItemsSource="{Binding RolesAndresponsibilities}">
+                        <BindableLayout.ItemTemplate>
+                            <DataTemplate>
+                                <StackLayout Margin="0,0,0,15">
+                                    <Label Text="{Binding Key, StringFormat='{0}:'}" FontSize="18" FontFamily="{DynamicResource PrimaryFont}" TextColor="{DynamicResource PrimaryTextColor}" HorizontalOptions="Start"/>
+                                    <StackLayout Margin="10,0,0,0" BindableLayout.ItemsSource="{Binding Value}" BindableLayout.ItemTemplate="{StaticResource CollectionItemTemplate}"/>
+                                </StackLayout>
+                            </DataTemplate>
+                        </BindableLayout.ItemTemplate>
+                    </StackLayout>
+                </StackLayout>
+            </ScrollView>
+        </StackLayout>
+
+        <!--Navigation Bar-->
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.15*"/>
+                <ColumnDefinition Width="0.8*"/>
+                <ColumnDefinition Width="0.15*"/>
+            </Grid.ColumnDefinitions>
+
+            <controls:ContentButton Grid.Column="0" HasShadow="False" BackgroundColor="Transparent" Command="{Binding GoBackCommand}">
+                <ffsvg:SvgCachedImage Source="{DynamicResource BlueLeftArrowIcon}" HeightRequest="16" Aspect="AspectFit" HorizontalOptions="Center" VerticalOptions="Center"/>
+            </controls:ContentButton>
+
+            <f9p:Label Grid.Column="1" Text="{Binding Header}" Lines="1" AutoFit="Width" FontSize="20" FontFamily="{DynamicResource PrimaryFont}" TextColor="{DynamicResource PrimaryTextColor}" VerticalOptions="Center" HorizontalOptions="Center"/>
+        </Grid>
+    </Grid>
 </ContentPage>

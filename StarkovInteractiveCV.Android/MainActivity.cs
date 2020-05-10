@@ -36,6 +36,7 @@ namespace StarkovInteractiveCV.Droid
             base.OnCreate(savedInstanceState);
             SvgCachedImage.Init();
             CachedImageRenderer.Init(false);
+            Forms9Patch.Droid.Settings.Initialize(this);
 
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
