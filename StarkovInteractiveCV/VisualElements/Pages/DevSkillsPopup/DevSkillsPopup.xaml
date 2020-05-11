@@ -8,10 +8,12 @@
                            xmlns:customControls="clr-namespace:StarkovInteractiveCV.VisualElements.Controls"
                            xmlns:uiModels="clr-namespace:StarkovInteractiveCV.VisualElements.Pages.DevSkillsPopup.UIModels"
                            xmlns:skillsEnums="clr-namespace:StarkovInteractiveCV.VisualElements.Pages.DevSkillsPopup.Enums"
+                           xmlns:enums="clr-namespace:StarkovInteractiveCV.Enums"
                            BackgroundColor="{DynamicResource PopupBackgroundColor}"
                            HasSystemPadding="False"
                            x:DataType="devSkillsPopup:DevSkillsPopupViewModel"
-                           x:Class="StarkovInteractiveCV.VisualElements.Pages.DevSkillsPopup.DevSkillsPopup">
+                           x:Class="StarkovInteractiveCV.VisualElements.Pages.DevSkillsPopup.DevSkillsPopup"
+                           x:Name="DevSkillsElement">
     <baseObjects:PopupPageBase.Animation>
         <rgAnimations:ScaleAnimation 
             PositionIn="Bottom"
@@ -27,33 +29,116 @@
 
     <baseObjects:PopupPageBase.Resources>
         <ResourceDictionary>
-            <Color x:Key="ProgrammingLangKnowledgeTypeColor">#FFB6C1</Color>
-            <Color x:Key="TechnologyKnowledgeTypeColor">#add8e6</Color>
-            <Color x:Key="DatabaseKnowledgeTypeColor">#b19cd9</Color>
-            <Color x:Key="ToolKnowledgeTypeColor">#fdad5c</Color>
-            <Color x:Key="IndustryKnowledgeTypeColor">#90ee90</Color>
-            <Color x:Key="OtherKnowledgeTypeColor">#7F6666</Color>
+            <Color x:Key="ProgrammingLangKnowledgeTypeLightColor">#FFB6C1</Color>
+            <Color x:Key="ProgrammingLangKnowledgeTypeDarkColor">#ff8295</Color>
+
+            <Color x:Key="TechnologyKnowledgeTypeLightColor">#add8e6</Color>
+            <Color x:Key="TechnologyKnowledgeTypeDarkColor">#7acbe6</Color>
+
+            <Color x:Key="DatabaseKnowledgeTypeLightColor">#b19cd9</Color>
+            <Color x:Key="DatabaseKnowledgeTypeDarkColor">#987acf</Color>
+
+            <Color x:Key="ToolKnowledgeTypeLightColor">#fdad5c</Color>
+            <Color x:Key="ToolKnowledgeTypeDarkColor">#fc9630</Color>
+
+            <Color x:Key="IndustryKnowledgeTypeLightColor">#90ee90</Color>
+            <Color x:Key="IndustryKnowledgeTypeDarkColor">#48c748</Color>
+
+            <Color x:Key="OtherKnowledgeTypeLightColor">#7F6666</Color>
+            <Color x:Key="OtherKnowledgeTypeDarkColor">#6b4c4c</Color>
+
             <DataTemplate x:DataType="uiModels:SkillUIModel" x:Key="SkillDataTemplate"> 
                 <Frame HeightRequest="30" CornerRadius="15" Padding="10,0" Margin="0,0,7,7" HorizontalOptions="Center" VerticalOptions="Center">
                     <Frame.Triggers>
-                        <DataTrigger TargetType="Frame" Binding="{Binding SkillType}" Value="{x:Static skillsEnums:KnowledgeType.ProgrammingLanguage}">
-                            <Setter Property="BackgroundColor" Value="{StaticResource ProgrammingLangKnowledgeTypeColor}"/>
-                        </DataTrigger>
-                        <DataTrigger TargetType="Frame" Binding="{Binding SkillType}" Value="{x:Static skillsEnums:KnowledgeType.Technology}">
-                            <Setter Property="BackgroundColor" Value="{StaticResource TechnologyKnowledgeTypeColor}"/>
-                        </DataTrigger>
-                        <DataTrigger TargetType="Frame" Binding="{Binding SkillType}" Value="{x:Static skillsEnums:KnowledgeType.Database}">
-                            <Setter Property="BackgroundColor" Value="{StaticResource DatabaseKnowledgeTypeColor}"/>
-                        </DataTrigger>
-                        <DataTrigger TargetType="Frame" Binding="{Binding SkillType}" Value="{x:Static skillsEnums:KnowledgeType.Tool}">
-                            <Setter Property="BackgroundColor" Value="{StaticResource ToolKnowledgeTypeColor}"/>
-                        </DataTrigger>
-                        <DataTrigger TargetType="Frame" Binding="{Binding SkillType}" Value="{x:Static skillsEnums:KnowledgeType.Industry}">
-                            <Setter Property="BackgroundColor" Value="{StaticResource IndustryKnowledgeTypeColor}"/>
-                        </DataTrigger>
-                        <DataTrigger TargetType="Frame" Binding="{Binding SkillType}" Value="{x:Static skillsEnums:KnowledgeType.Other}">
-                            <Setter Property="BackgroundColor" Value="{StaticResource OtherKnowledgeTypeColor}"/>
-                        </DataTrigger>
+                        <MultiTrigger TargetType="Frame">
+                            <MultiTrigger.Conditions>
+                                <BindingCondition Binding="{Binding BindingContext.CurrentTheme, Source={x:Reference DevSkillsElement}}" Value="{x:Static enums:StyleTheme.Light}"/>
+                                <BindingCondition Binding="{Binding SkillType}" Value="{x:Static skillsEnums:KnowledgeType.ProgrammingLanguage}"/>
+                            </MultiTrigger.Conditions>
+                            <Setter Property="BackgroundColor" Value="{StaticResource ProgrammingLangKnowledgeTypeLightColor}"/>
+                        </MultiTrigger>
+                        <MultiTrigger TargetType="Frame">
+                            <MultiTrigger.Conditions>
+                                <BindingCondition Binding="{Binding BindingContext.CurrentTheme, Source={x:Reference DevSkillsElement}}" Value="{x:Static enums:StyleTheme.Dark}"/>
+                                <BindingCondition Binding="{Binding SkillType}" Value="{x:Static skillsEnums:KnowledgeType.ProgrammingLanguage}"/>
+                            </MultiTrigger.Conditions>
+                            <Setter Property="BackgroundColor" Value="{StaticResource ProgrammingLangKnowledgeTypeDarkColor}"/>
+                        </MultiTrigger>
+
+                        <MultiTrigger TargetType="Frame">
+                            <MultiTrigger.Conditions>
+                                <BindingCondition Binding="{Binding BindingContext.CurrentTheme, Source={x:Reference DevSkillsElement}}" Value="{x:Static enums:StyleTheme.Light}"/>
+                                <BindingCondition Binding="{Binding SkillType}" Value="{x:Static skillsEnums:KnowledgeType.Technology}"/>
+                            </MultiTrigger.Conditions>
+                            <Setter Property="BackgroundColor" Value="{StaticResource TechnologyKnowledgeTypeLightColor}"/>
+                        </MultiTrigger>
+                        <MultiTrigger TargetType="Frame">
+                            <MultiTrigger.Conditions>
+                                <BindingCondition Binding="{Binding BindingContext.CurrentTheme, Source={x:Reference DevSkillsElement}}" Value="{x:Static enums:StyleTheme.Dark}"/>
+                                <BindingCondition Binding="{Binding SkillType}" Value="{x:Static skillsEnums:KnowledgeType.Technology}"/>
+                            </MultiTrigger.Conditions>
+                            <Setter Property="BackgroundColor" Value="{StaticResource TechnologyKnowledgeTypeDarkColor}"/>
+                        </MultiTrigger>
+                        
+                        <MultiTrigger TargetType="Frame">
+                            <MultiTrigger.Conditions>
+                                <BindingCondition Binding="{Binding BindingContext.CurrentTheme, Source={x:Reference DevSkillsElement}}" Value="{x:Static enums:StyleTheme.Light}"/>
+                                <BindingCondition Binding="{Binding SkillType}" Value="{x:Static skillsEnums:KnowledgeType.Database}"/>
+                            </MultiTrigger.Conditions>
+                            <Setter Property="BackgroundColor" Value="{StaticResource DatabaseKnowledgeTypeLightColor}"/>
+                        </MultiTrigger>
+                        <MultiTrigger TargetType="Frame">
+                            <MultiTrigger.Conditions>
+                                <BindingCondition Binding="{Binding BindingContext.CurrentTheme, Source={x:Reference DevSkillsElement}}" Value="{x:Static enums:StyleTheme.Dark}"/>
+                                <BindingCondition Binding="{Binding SkillType}" Value="{x:Static skillsEnums:KnowledgeType.Database}"/>
+                            </MultiTrigger.Conditions>
+                            <Setter Property="BackgroundColor" Value="{StaticResource DatabaseKnowledgeTypeDarkColor}"/>
+                        </MultiTrigger>
+                        
+                        <MultiTrigger TargetType="Frame">
+                            <MultiTrigger.Conditions>
+                                <BindingCondition Binding="{Binding BindingContext.CurrentTheme, Source={x:Reference DevSkillsElement}}" Value="{x:Static enums:StyleTheme.Light}"/>
+                                <BindingCondition Binding="{Binding SkillType}" Value="{x:Static skillsEnums:KnowledgeType.Tool}"/>
+                            </MultiTrigger.Conditions>
+                            <Setter Property="BackgroundColor" Value="{StaticResource ToolKnowledgeTypeLightColor}"/>
+                        </MultiTrigger>
+                        <MultiTrigger TargetType="Frame">
+                            <MultiTrigger.Conditions>
+                                <BindingCondition Binding="{Binding BindingContext.CurrentTheme, Source={x:Reference DevSkillsElement}}" Value="{x:Static enums:StyleTheme.Dark}"/>
+                                <BindingCondition Binding="{Binding SkillType}" Value="{x:Static skillsEnums:KnowledgeType.Tool}"/>
+                            </MultiTrigger.Conditions>
+                            <Setter Property="BackgroundColor" Value="{StaticResource ToolKnowledgeTypeDarkColor}"/>
+                        </MultiTrigger>
+                        
+                        <MultiTrigger TargetType="Frame">
+                            <MultiTrigger.Conditions>
+                                <BindingCondition Binding="{Binding BindingContext.CurrentTheme, Source={x:Reference DevSkillsElement}}" Value="{x:Static enums:StyleTheme.Light}"/>
+                                <BindingCondition Binding="{Binding SkillType}" Value="{x:Static skillsEnums:KnowledgeType.Industry}"/>
+                            </MultiTrigger.Conditions>
+                            <Setter Property="BackgroundColor" Value="{StaticResource IndustryKnowledgeTypeLightColor}"/>
+                        </MultiTrigger>
+                        <MultiTrigger TargetType="Frame">
+                            <MultiTrigger.Conditions>
+                                <BindingCondition Binding="{Binding BindingContext.CurrentTheme, Source={x:Reference DevSkillsElement}}" Value="{x:Static enums:StyleTheme.Dark}"/>
+                                <BindingCondition Binding="{Binding SkillType}" Value="{x:Static skillsEnums:KnowledgeType.Industry}"/>
+                            </MultiTrigger.Conditions>
+                            <Setter Property="BackgroundColor" Value="{StaticResource IndustryKnowledgeTypeDarkColor}"/>
+                        </MultiTrigger>
+                        
+                        <MultiTrigger TargetType="Frame">
+                            <MultiTrigger.Conditions>
+                                <BindingCondition Binding="{Binding BindingContext.CurrentTheme, Source={x:Reference DevSkillsElement}}" Value="{x:Static enums:StyleTheme.Light}"/>
+                                <BindingCondition Binding="{Binding SkillType}" Value="{x:Static skillsEnums:KnowledgeType.Other}"/>
+                            </MultiTrigger.Conditions>
+                            <Setter Property="BackgroundColor" Value="{StaticResource OtherKnowledgeTypeLightColor}"/>
+                        </MultiTrigger>
+                        <MultiTrigger TargetType="Frame">
+                            <MultiTrigger.Conditions>
+                                <BindingCondition Binding="{Binding BindingContext.CurrentTheme, Source={x:Reference DevSkillsElement}}" Value="{x:Static enums:StyleTheme.Dark}"/>
+                                <BindingCondition Binding="{Binding SkillType}" Value="{x:Static skillsEnums:KnowledgeType.Other}"/>
+                            </MultiTrigger.Conditions>
+                            <Setter Property="BackgroundColor" Value="{StaticResource OtherKnowledgeTypeDarkColor}"/>
+                        </MultiTrigger>
                     </Frame.Triggers>
                     <Label VerticalOptions="Center" Text="{Binding Name}" FontSize="16" FontFamily="{DynamicResource SecondaryTextFont}" TextColor="{DynamicResource PrimaryTextColor}"/>
                 </Frame>

@@ -2,6 +2,8 @@
 using System.Linq;
 using Prism.Navigation;
 using Prism.Services.Dialogs;
+using StarkovInteractiveCV.Enums;
+using StarkovInteractiveCV.Interfaces;
 using StarkovInteractiveCV.VisualElements.BaseObjects;
 using StarkovInteractiveCV.VisualElements.Pages.DevSkillsPopup.Enums;
 using StarkovInteractiveCV.VisualElements.Pages.DevSkillsPopup.UIModels;
@@ -10,6 +12,10 @@ namespace StarkovInteractiveCV.VisualElements.Pages.DevSkillsPopup
 {
     public class DevSkillsPopupViewModel : ViewModelBase
     {
+        private readonly IThemeService _themeService;
+
+        public StyleTheme CurrentTheme => _themeService.CurrentTheme;
+
         private IEnumerable<SkillUIModel> _skills;
         public IEnumerable<SkillUIModel> Skills
         {
@@ -31,9 +37,10 @@ namespace StarkovInteractiveCV.VisualElements.Pages.DevSkillsPopup
             set => SetProperty(ref _idustries, value);
         }
 
-        public DevSkillsPopupViewModel(INavigationService navigationService, IDialogService dialogService)
+        public DevSkillsPopupViewModel(INavigationService navigationService, IDialogService dialogService, IThemeService themeService)
             : base(navigationService, dialogService)
         {
+            _themeService = themeService;
         }
 
         public override void OnNavigatedTo(INavigationParameters parameters)
