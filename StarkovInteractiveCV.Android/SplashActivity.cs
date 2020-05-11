@@ -9,8 +9,16 @@ namespace StarkovInteractiveCV.Droid
     {
         protected override void OnResume()
         {
+            if (MainActivity.Instance == null)
+            {
+                StartActivity(new Intent(Application.Context, typeof(MainActivity)));
+            }
+            else
+            {
+                Finish();
+            }
+            
             base.OnResume();
-            StartActivity(new Intent(Application.Context, typeof(MainActivity)));
         }
 
         public override void OnBackPressed() { }
