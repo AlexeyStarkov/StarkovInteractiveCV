@@ -1,7 +1,7 @@
 ﻿using System.Windows.Input;
-using Prism.Navigation;
 using Prism.Services.Dialogs;
 using StarkovInteractiveCV.Helpers;
+using StarkovInteractiveCV.Interfaces;
 using StarkovInteractiveCV.VisualElements.BaseObjects;
 using Xamarin.Essentials;
 using Xamarin.Forms;
@@ -39,7 +39,7 @@ namespace StarkovInteractiveCV.VisualElements.Pages.SocialNetworksPopup
 
         public ICommand OpenGithubCommand => new Command(async (parameter) => await Launcher.OpenAsync(Constants.GithubUrl));
 
-        public SocialNetworksPopupViewModel(INavigationService navigationService, IDialogService dialogService)
+        public SocialNetworksPopupViewModel(IExtendedNavigationService navigationService, IDialogService dialogService)
             : base(navigationService, dialogService)
         {
         }
