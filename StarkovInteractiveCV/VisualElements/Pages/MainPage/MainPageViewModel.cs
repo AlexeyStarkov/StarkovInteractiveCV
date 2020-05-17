@@ -43,7 +43,7 @@ namespace StarkovInteractiveCV.VisualElements.Pages.MainPage
 
         public ICommand SwitchThemeCommand => new Command((parameter) => _themeService.SwitchTheme());
 
-        public MainPageViewModel(INavigationService navigationService, IDialogService dialogService, IThemeService themeService)
+        public MainPageViewModel(IExtendedNavigationService navigationService, IDialogService dialogService, IThemeService themeService)
             : base(navigationService, dialogService)
         {
             _themeService = themeService;
