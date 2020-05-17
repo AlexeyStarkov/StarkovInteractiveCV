@@ -4,6 +4,9 @@
                            xmlns:baseObjects="clr-namespace:StarkovInteractiveCV.VisualElements.BaseObjects"
                            xmlns:rgAnimations="clr-namespace:Rg.Plugins.Popup.Animations;assembly=Rg.Plugins.Popup"
                            xmlns:workflowPopup="clr-namespace:StarkovInteractiveCV.VisualElements.Pages.WorkflowExpiriencePopup"
+                           xmlns:ffsvg="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
+                           xmlns:customControls="clr-namespace:StarkovInteractiveCV.VisualElements.Controls"
+                           xmlns:f9p="clr-namespace:Forms9Patch;assembly=Forms9Patch"
                            BackgroundColor="{DynamicResource PopupTransparentBackgroundColor}"
                            x:DataType="workflowPopup:WorkflowExpiriencePopupViewModel"
                            x:Class="StarkovInteractiveCV.VisualElements.Pages.WorkflowExpiriencePopup.WorkflowExpiriencePopup">
@@ -29,7 +32,19 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <Label Grid.Row="0" Text="Workflow expirience" FontSize="30" TextColor="{DynamicResource AccentColor}" FontFamily="{DynamicResource PrimaryFont}" HorizontalOptions="Center" VerticalOptions="Center"/>
+        <Grid Grid.Row="0" ColumnSpacing="15">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="50"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="50"/>
+            </Grid.ColumnDefinitions>
+
+            <customControls:ContentButton Grid.Column="0" VerticalOptions="Center" HorizontalOptions="End" WidthRequest="30" HeightRequest="30" CornerRadius="15" Command="{Binding GoBackCommand}" BackgroundColor="{DynamicResource AccentColor}">
+                <ffsvg:SvgCachedImage HeightRequest="11" Aspect="AspectFit" VerticalOptions="Center" HorizontalOptions="Center" Source="{DynamicResource WhiteCloseXIcon}"/>
+            </customControls:ContentButton>
+
+            <f9p:Label Grid.Column="1" Text="Workflow expirience" Lines="1" AutoFit="Width" FontSize="30" TextColor="{DynamicResource AccentColor}" FontFamily="{DynamicResource PrimaryFont}" HorizontalOptions="Center" VerticalOptions="Center"/>
+        </Grid>
 
         <StackLayout Grid.Row="1" VerticalOptions="Center" HorizontalOptions="Center" >
             <Grid ColumnSpacing="15">
