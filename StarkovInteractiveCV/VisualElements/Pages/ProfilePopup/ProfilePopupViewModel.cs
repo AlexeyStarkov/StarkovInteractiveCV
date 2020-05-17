@@ -1,6 +1,6 @@
 ﻿using System;
-using Prism.Navigation;
 using Prism.Services.Dialogs;
+using StarkovInteractiveCV.Interfaces;
 using StarkovInteractiveCV.VisualElements.BaseObjects;
 
 namespace StarkovInteractiveCV.VisualElements.Pages.ProfilePopup
@@ -9,7 +9,7 @@ namespace StarkovInteractiveCV.VisualElements.Pages.ProfilePopup
     {
         public string Text { get; set; }
 
-        public ProfilePopupViewModel(INavigationService navigationService, IDialogService dialogService)
+        public ProfilePopupViewModel(IExtendedNavigationService navigationService, IDialogService dialogService)
             : base(navigationService, dialogService)
         {
             Text = CreateProfileText();

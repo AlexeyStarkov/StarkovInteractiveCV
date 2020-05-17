@@ -1,12 +1,12 @@
-﻿using Prism.Navigation;
-using Prism.Services.Dialogs;
+﻿using Prism.Services.Dialogs;
+using StarkovInteractiveCV.Interfaces;
 using StarkovInteractiveCV.VisualElements.BaseObjects;
 
 namespace StarkovInteractiveCV.VisualElements.Pages.WorkflowExpiriencePopup
 {
     public class WorkflowExpiriencePopupViewModel : ViewModelBase
     {
-        public WorkflowExpiriencePopupViewModel(INavigationService navigationService, IDialogService dialogService)
+        public WorkflowExpiriencePopupViewModel(IExtendedNavigationService navigationService, IDialogService dialogService)
             : base(navigationService, dialogService)
         {
         }

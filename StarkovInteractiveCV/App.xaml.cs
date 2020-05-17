@@ -53,6 +53,7 @@ namespace StarkovInteractiveCV
             containerRegistry.RegisterForNavigation<PersonalityPopup, PersonalityPopupViewModel>();
             containerRegistry.RegisterForNavigation<WorkDetailsPage, WorkDetailsPageViewModel>();
 
+            containerRegistry.RegisterSingleton<IExtendedNavigationService, ExtendedNavigationService>();
             containerRegistry.RegisterSingleton<ISettingsService, SettingsService>();
             containerRegistry.RegisterSingleton<IThemeService, ThemeService>();
         }

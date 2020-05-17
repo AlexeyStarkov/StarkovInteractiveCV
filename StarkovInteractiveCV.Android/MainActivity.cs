@@ -7,6 +7,7 @@ using Android.Runtime;
 using FFImageLoading.Forms.Platform;
 using FFImageLoading.Svg.Forms;
 using Plugin.CurrentActivity;
+using Rg.Plugins.Popup.Services;
 using StarkovInteractiveCV.Enums;
 
 namespace StarkovInteractiveCV.Droid
@@ -54,10 +55,21 @@ namespace StarkovInteractiveCV.Droid
             var preferences = PreferenceManager.GetDefaultSharedPreferences(this).Edit();
             preferences.PutInt(nameof(StyleTheme), (int)theme);
             preferences.Apply();
+        }
 
+        internal void RestartActivity()
+        {
             var intent = new Intent(this, typeof(MainActivity));
             StartActivity(intent);
             Finish();
+        }
+
+        public override async void OnBackPressed()
+        {
+            if (Rg.Plugins.Popup.Popup.SendBackPressed(base.OnBackPressed))
+            {
+                await PopupNavigation.Instance.PopAsync();
+            }
         }
     }
 }

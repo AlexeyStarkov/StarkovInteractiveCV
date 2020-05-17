@@ -15,6 +15,7 @@ namespace StarkovInteractiveCV.Droid
             }
             else
             {
+                MainActivity.Instance.RestartActivity();
                 Finish();
             }
             

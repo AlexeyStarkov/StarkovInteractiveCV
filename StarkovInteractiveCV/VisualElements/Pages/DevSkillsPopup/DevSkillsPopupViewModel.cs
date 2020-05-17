@@ -37,7 +37,7 @@ namespace StarkovInteractiveCV.VisualElements.Pages.DevSkillsPopup
             set => SetProperty(ref _idustries, value);
         }
 
-        public DevSkillsPopupViewModel(INavigationService navigationService, IDialogService dialogService, IThemeService themeService)
+        public DevSkillsPopupViewModel(IExtendedNavigationService navigationService, IDialogService dialogService, IThemeService themeService)
             : base(navigationService, dialogService)
         {
             _themeService = themeService;

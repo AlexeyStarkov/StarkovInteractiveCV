@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using Prism.Navigation;
 using Prism.Services.Dialogs;
+using StarkovInteractiveCV.Interfaces;
 using StarkovInteractiveCV.Models;
 using StarkovInteractiveCV.VisualElements.BaseObjects;
 
@@ -36,7 +37,7 @@ namespace StarkovInteractiveCV.VisualElements.Pages.WorkDetailsPage
             set => SetProperty(ref _achivements, value);
         }
 
-        public WorkDetailsPageViewModel(INavigationService navigationService, IDialogService dialogService)
+        public WorkDetailsPageViewModel(IExtendedNavigationService navigationService, IDialogService dialogService)
             : base(navigationService, dialogService)
         {
         }

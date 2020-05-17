@@ -42,18 +42,27 @@
         </ResourceDictionary>
     </baseObjects:PopupPageBase.Resources>
 
-    <StackLayout Spacing="20" VerticalOptions="Center" HorizontalOptions="Center">
-        <customControls:ContentButton Command="{Binding OpenFacebookCommand}" Style="{StaticResource SocialMediaButtonStyle}">
-            <ffsvg:SvgCachedImage Source="{DynamicResource WhiteFacebookIcon}" Style="{StaticResource SocialMediaButtonIconStyle}"/>
+    <Grid>
+        <Grid.GestureRecognizers>
+            <TapGestureRecognizer Command="{Binding GoBackCommand}"/>
+        </Grid.GestureRecognizers>
+        <customControls:ContentButton Margin="20,20,0,0" VerticalOptions="Start" HorizontalOptions="Start" WidthRequest="30" HeightRequest="30" CornerRadius="15" Command="{Binding GoBackCommand}" Style="{StaticResource SocialMediaButtonStyle}">
+            <ffsvg:SvgCachedImage HeightRequest="11" Source="{DynamicResource WhiteCloseXIcon}" Style="{StaticResource SocialMediaButtonIconStyle}"/>
         </customControls:ContentButton>
-        <customControls:ContentButton Command="{Binding OpenInstagramCommand}" Style="{StaticResource SocialMediaButtonStyle}">
-            <ffsvg:SvgCachedImage Source="{DynamicResource WhiteInstagramIcon}" Style="{StaticResource SocialMediaButtonIconStyle}"/>
-        </customControls:ContentButton>
-        <customControls:ContentButton Command="{Binding OpenGithubCommand}" Style="{StaticResource SocialMediaButtonStyle}">
-            <ffsvg:SvgCachedImage Source="{DynamicResource WhiteGithubIcon}" Style="{StaticResource SocialMediaButtonIconStyle}"/>
-        </customControls:ContentButton>
-        <customControls:ContentButton Command="{Binding OpenLinkedInCommand}" Style="{StaticResource SocialMediaButtonStyle}">
-            <ffsvg:SvgCachedImage Source="{DynamicResource WhiteLinkedinIcon}" Style="{StaticResource SocialMediaButtonIconStyle}"/>
-        </customControls:ContentButton>
-    </StackLayout>
+
+        <StackLayout Spacing="20" VerticalOptions="Center" HorizontalOptions="Center">
+            <customControls:ContentButton Command="{Binding OpenFacebookCommand}" Style="{StaticResource SocialMediaButtonStyle}">
+                <ffsvg:SvgCachedImage Source="{DynamicResource WhiteFacebookIcon}" Style="{StaticResource SocialMediaButtonIconStyle}"/>
+            </customControls:ContentButton>
+            <customControls:ContentButton Command="{Binding OpenInstagramCommand}" Style="{StaticResource SocialMediaButtonStyle}">
+                <ffsvg:SvgCachedImage Source="{DynamicResource WhiteInstagramIcon}" Style="{StaticResource SocialMediaButtonIconStyle}"/>
+            </customControls:ContentButton>
+            <customControls:ContentButton Command="{Binding OpenGithubCommand}" Style="{StaticResource SocialMediaButtonStyle}">
+                <ffsvg:SvgCachedImage Source="{DynamicResource WhiteGithubIcon}" Style="{StaticResource SocialMediaButtonIconStyle}"/>
+            </customControls:ContentButton>
+            <customControls:ContentButton Command="{Binding OpenLinkedInCommand}" Style="{StaticResource SocialMediaButtonStyle}">
+                <ffsvg:SvgCachedImage Source="{DynamicResource WhiteLinkedinIcon}" Style="{StaticResource SocialMediaButtonIconStyle}"/>
+            </customControls:ContentButton>
+        </StackLayout>
+    </Grid>
 </baseObjects:PopupPageBase>

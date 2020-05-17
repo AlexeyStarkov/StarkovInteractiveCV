@@ -1,12 +1,12 @@
-﻿using Prism.Navigation;
-using Prism.Services.Dialogs;
+﻿using Prism.Services.Dialogs;
+using StarkovInteractiveCV.Interfaces;
 using StarkovInteractiveCV.VisualElements.BaseObjects;
 
 namespace StarkovInteractiveCV.VisualElements.Pages.LanguagesPopup
 {
     public class LanguagesPopupViewModel : ViewModelBase
     {
-        public LanguagesPopupViewModel(INavigationService navigationService, IDialogService dialogService)
+        public LanguagesPopupViewModel(IExtendedNavigationService navigationService, IDialogService dialogService)
             : base(navigationService, dialogService)
         {
         }
