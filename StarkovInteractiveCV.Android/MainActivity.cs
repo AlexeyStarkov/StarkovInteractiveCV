@@ -55,6 +55,7 @@ namespace StarkovInteractiveCV.Droid
             var preferences = PreferenceManager.GetDefaultSharedPreferences(this).Edit();
             preferences.PutInt(nameof(StyleTheme), (int)theme);
             preferences.Apply();
+            RestartActivity();
         }
 
         internal void RestartActivity()
